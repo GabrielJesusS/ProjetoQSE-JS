@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Inicio do css cabeçalho*/
+header{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: white;
+    background-image: linear-gradient( to right, #004EF2, #0B85DB);
+    filter: drop-shadow( 0px 1px 4px #3b3b3b);
+
+}
+#pgHead{
+    width: 100%;
+}
+
+#name{
+    display: flex;
+}
+
+#name h1{
+    display: block;
+    padding: 10px;
+    padding-top: 20px;
+}
+
+/*fim css cabeçalho*/
+
+
+#content{
+    display: flex;
+    padding: 30px 15px 30px 15px;
+    justify-content: center;
+    
+}
+
+#explain{
+    padding: 20px;
+    display: flex;
+}
+
+#explain p{
+    
+    width: 500px
+}
+
+#explain2{
+    text-align: center;
+    
+}
+
+#explain2 p{
+    padding: 5px; 
+}
+#explain2 h2{
+    padding-top: 15px; 
+}
+
+#explain2 ul{
+    padding-top: 15px;
+    list-style: none; 
+}
+
+#explain2 a{
+
+    color: black; 
+}
+
+#grf{
+    padding-left: 40px;
+    display: flex;
+    float: right;
+    width: 650px;
+}
+
+footer{
+    text-align: center;
+}
+
