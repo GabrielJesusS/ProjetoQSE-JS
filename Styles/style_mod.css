@@ -21,15 +21,10 @@ header{
 #pgHead{
     width: 100%;
 }
-#pgProc{
-    width: 100%;
-    padding-top: 0.1rem;
-    padding-bottom: 40%;
-    background-image:linear-gradient( to right,#1962FF, #26A5FF);
-}
 
 #name{
     display: flex;
+    
 }
 
 #name h1{
@@ -38,8 +33,24 @@ header{
     padding-top: 20px;
 }
 
+#project{
+    
+    padding-left: 500px;
+    margin: 0 auto;
+    padding-top: 27px;
+}
+
+#project a{
+    color: white;
+}
+
 /*fim css cabeçalho*/
 
+#pgProc{
+    width: 100%;
+    padding-top: 0.1rem;
+    padding-bottom: 40%;
+}
 
 #content{
     display: flex;
@@ -88,6 +99,7 @@ header{
 }
 
 footer{
+    padding-top: 90px;
     text-align: center;
 }
 

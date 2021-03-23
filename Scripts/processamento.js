@@ -1,9 +1,9 @@
+let datas
+
 function procesamento(){
 
 let sFile;
-     
-    let datas
-
+    
     document.getElementById('fileUpload').addEventListener('onClick',(event)=>{
         sFile = event.target.files[0];
         console.log(event.target.files);
@@ -52,26 +52,27 @@ function grafico(){
             pe:0
         }
 
-        for(let i = 0; i < rowObject.length; i++){
+        for(let i = 0; i < datas.length; i++){
     
-        if(rowObject[i]["6. Qual o seu gênero?"] === "Feminino"){
+        if(datas[i]["6. Qual o seu gênero?"].value === "Feminino"){
             gender.f++
-        }else if(rowObject[i]["6. Qual o seu gênero?"] === "Masculino"){
+        }else if(datas[i]["6. Qual o seu gênero?"].value === "Masculino"){
             gender.m++
         }else{
             gender.ns++
         }
+
         } 
         //document.write("<hr><br>")
         
 
-        for(let i = 0; i < rowObject.length; i++){
+        for(let i = 0; i < datas.length; i++){
     
-        if(rowObject[i]["4. Qual o estado do Brasil que você nasceu?"] === "São Paulo (SP)"){
+        if(datas[i]["4. Qual o estado do Brasil que você nasceu?"] === "São Paulo (SP)"){
             gender2.s++
-        }else if(rowObject[i]["4. Qual o estado do Brasil que você nasceu?"] === "Minas Gerais (MG)"){
+        }else if(datas[i]["4. Qual o estado do Brasil que você nasceu?"] === "Minas Gerais (MG)"){
             gender2.m++
-        }else if(rowObject[i]["4. Qual o estado do Brasil que você nasceu?"] === "Paraná (PR)"){
+        }else if(datas[i]["4. Qual o estado do Brasil que você nasceu?"] === "Paraná (PR)"){
             gender2.p++
         }else{
             gender2.pe++
