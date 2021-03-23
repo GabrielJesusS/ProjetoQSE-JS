@@ -21,6 +21,12 @@ header{
 #pgHead{
     width: 100%;
 }
+#pgProc{
+    width: 100%;
+    padding-top: 0.1rem;
+    padding-bottom: 40%;
+    background-image:linear-gradient( to right,#1962FF, #26A5FF);
+}
 
 #name{
     display: flex;

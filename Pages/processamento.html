@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/style_mod.css">
+    <link rel="shortcut icon" href="../Content/Images/favicon.ico" type="image/x-icon">
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <input class = "nButton" type="file" name="files" id="fileUpload"  accept=".xls,.xlsx"> <br>
-        <button class = "nButton" type="button" id="uploadExcel" onclick="procesamento()">Converter</button>
-        <button class = "nButton" type="button" id="teste"></button>
+    <header>
+        <div id="pgHead">
+                <div id="name">
+                    <img src="../Content/Images/cpu 70px.png" alt="imagem chip eletronico" href="../index.html">
+                    <h1>Projeto - Solução Questionário Socioeconômico</h1>
+                </div>
+        </div>
+    </header>
+    <div id="pgProc">
+        <p>
+            <input class = "nButton" type="file" name="files" id="fileUpload"  accept=".xls,.xlsx"> <br>
+            <button class = "nButton" type="button" id="uploadExcel" onclick="procesamento()">Converter</button>
+            <button class = "nButton" type="button" id="teste"></button>
+        </p>
     </div>
     <script src="../Scripts/processamento.js"></script>        
 </body>
