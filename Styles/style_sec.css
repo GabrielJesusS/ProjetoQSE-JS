@@ -1,0 +1,31 @@
+#buttonss{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nButton{
+    margin: 30px;
+    padding: 5px 10px 5px 10px;
+    background-image: linear-gradient(to right, #004EF2, #0B85DB);
+    color: white;
+    border: none;
+    filter: drop-shadow(3px 3px 1px  #2222225b);
+    
+}
+
+#fileUpload{
+    display: none;
+}
+
+#rot{
+    filter: drop-shadow(3px 3px 1px  #2222225b);
+    background-image: linear-gradient(to right, #004EF2, #0B85DB);
+    color: white;
+    height: 33px;
+    width: 180px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

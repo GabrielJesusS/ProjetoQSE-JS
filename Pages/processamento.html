@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../Styles/style_mod.css">
     <link rel="stylesheet" href="../Styles/style_sec.css">
     <link rel="shortcut icon" href="../Content/Images/favicon.ico" type="image/x-icon">
-    <title>Document</title>
+    <title>Projeto</title>
 </head>
 <body>
     <header>
@@ -19,12 +19,21 @@
                 </div>
         </div>
     </header>
-    <div id="pgProc">
-        <p>
-            <input class = "nButton" type="file" name="files" id="fileUpload"  accept=".xls,.xlsx"> <br>
-            <button class = "nButton" type="button" id="uploadExcel" onclick="procesamento()">Converter</button>
-            <button class = "nButton" type="button" onclick="grafico()" id="teste">oi</button>
-        </p>
+    <div id="content">
+            <div id="buttonss">
+                
+                    <input type="file" name="files" id="fileUpload"  accept=".xls,.xlsx">
+                
+                <label id="rot" for="fileUpload">
+                    <img src="../Content/Images/upload20px.png" alt="upload">
+                    Selecione o aquivo
+                </label>
+
+                <button class = "nButton" type="button" id="uploadExcel" onclick="procesamento()"><img src="../Content/Images/cycle20px.png" alt="cycle"> Converter</button>
+
+                <button class = "nButton" type="button" onclick="grafico()" id="teste"><img src="../Content/Images/statistics20px.png" alt="statistic"> Processar dados</button>
+            </div>
+        
     </div>
     <script src="../Scripts/processamento.js"></script>        
 </body>
