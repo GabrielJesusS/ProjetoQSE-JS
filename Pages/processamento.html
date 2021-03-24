@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../Styles/style_mod.css">
     <link rel="stylesheet" href="../Styles/style_sec.css">
     <link rel="shortcut icon" href="../Content/Images/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <title>Projeto</title>
 </head>
 <body>
@@ -29,12 +31,122 @@
                     Selecione o aquivo
                 </label>
 
-                <button class = "nButton" type="button" id="uploadExcel" onclick="procesamento()"><img src="../Content/Images/cycle20px.png" alt="cycle"> Converter</button>
+                <button class = "nButton" type="button" id="uploadExcel"><img src="../Content/Images/cycle20px.png" alt="cycle"> Converter</button>
 
-                <button class = "nButton" type="button" onclick="grafico()" id="teste"><img src="../Content/Images/statistics20px.png" alt="statistic"> Processar dados</button>
+                <button class = "nButton" type="button" id="teste"><img src="../Content/Images/statistics20px.png" alt="statistic"> Processar dados</button>
             </div>
-        
     </div>
-    <script src="../Scripts/processamento.js"></script>        
+    <div id="graficos">
+        <canvas id="nchart" class="chartsjs" width="34" height="11" style="display: block; width: 34px; height: 11px;"></canvas>
+        <canvas id="nchart2"class="chartsjs" width="34" height="11" style="display: block; width: 34px; height: 11px;"></canvas>
+    </div>
+    <script src="../Scripts/processamento.js"></script>  
+    <script>
+        let sFile;
+        
+        let datas
+    
+        document.getElementById('fileUpload').addEventListener('change',(event)=>{
+            sFile = event.target.files[0];
+            console.log(event.target.files);
+        });
+            
+    
+        
+        document.getElementById('uploadExcel').addEventListener('click',()=>{
+            console.log("Click")
+            if(sFile){
+                let fileReader = new FileReader();
+                fileReader.readAsBinaryString(sFile);
+                fileReader.onload = (event)=>{
+                    console.log(event.target.result)
+                    let data = event.target.result
+                    let workbook = XLSX.read(data,{type:"binary"});
+                    console.log(workbook)
+                    workbook.SheetNames.forEach(sheet => {
+                        let rowObject = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheet]);
+                        console.log(rowObject)
+                        datas = rowObject
+                    });
+                }
+            }
+        })
+    
+        document.getElementById('teste').addEventListener('click',()=>{
+            
+            //document.write(datas.length)
+            //document.write("<hr><br>")
+            console.log("teste")
+            let gender ={
+                f:0,
+                m:0,
+                ns:0
+            }
+            //document.write(datas[0]["6. Qual o seu gênero?"])
+            let gender2 ={
+                s:0,
+                m:0,
+                p:0,
+                pe:0
+            }
+    
+            for(let i = 0; i < datas.length; i++){
+        
+            if(datas[i]["6. Qual o seu gênero?"] === "Feminino"){
+                gender.f++
+            }else if(datas[i]["6. Qual o seu gênero?"] === "Masculino"){
+                gender.m++
+            }else{
+                gender.ns++
+            }
+            } 
+            //document.write("<hr><br>")
+            
+    
+            for(let i = 0; i < datas.length; i++){
+        
+            if(datas[i]["4. Qual o estado do Brasil que você nasceu?"] === "São Paulo (SP)"){
+                gender2.s++
+            }else if(datas[i]["4. Qual o estado do Brasil que você nasceu?"] === "Minas Gerais (MG)"){
+                gender2.m++
+            }else if(datas[i]["4. Qual o estado do Brasil que você nasceu?"] === "Paraná (PR)"){
+                gender2.p++
+            }else{
+                gender2.pe++
+            }
+            } 
+    
+    
+            var ctx = document.getElementById("nchart")
+    
+            var ctx2 = document.getElementById("nchart2")
+    
+            var chartGraph = new Chart(ctx2,{
+                type: "doughnut",
+                data:{
+                    labels: ["SP","MG","PR", "PE"],
+                    datasets: [{
+                        data:[gender2.s,gender2.m,gender2.p,gender2.pe],
+                        
+                        backgroundColor: ["#1639DB", "#ff6384", "#DBA400", "#FF5733"]
+    
+                    }]
+                }
+            })
+    
+            var chartGraph = new Chart(ctx,{
+                type: "doughnut",
+                data:{
+                    labels: ["Masculino","Feminino","Não sabe responder"],
+                    datasets: [{
+                        data:[gender.m,gender.f,gender.ns],
+                        
+                        backgroundColor: ["#1639DB", "#ff6384", "#DBA400"]
+    
+                    }]
+                }
+            })
+        })
+    </script>      
 </body>
 </html>

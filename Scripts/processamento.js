@@ -1,9 +1,17 @@
-let datas
-
 function procesamento(){
-
+let datas
 let sFile;
+
     
+    const workbook = XLSX.readFileSync(document.getElementById('fileUpload'), { cellFormula: false, cellHTML: false });
+    const sheetNames = workbook.SheetNames;
+    const planilha = sheetNames[0];
+    const rows = XLSX.utils.sheet_to_json(workbook.Sheets[planilha], { defval: ""});
+    console.log(workbook)
+    console.log(sheetNames)
+    console.log(planilha)
+    console.log(rows)
+
     document.getElementById('fileUpload').addEventListener('onClick',(event)=>{
         sFile = event.target.files[0];
         console.log(event.target.files);
