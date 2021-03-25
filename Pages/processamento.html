@@ -33,17 +33,10 @@
 
                 <button class = "nButton" type="button" id="uploadExcel"><img src="../Content/Images/cycle20px.png" alt="cycle"> Converter</button>
 
-                <button class = "nButton" type="button" id="teste"><img src="../Content/Images/statistics20px.png" alt="statistic"> Processar dados</button>
+                <button class = "nButton" type="button" id="process"><img src="../Content/Images/statistics20px.png" alt="statistic"> Processar dados</button>
             </div>
     </div>
-    <div id="graficos">
-        <canvas id="nchart" class="chartsjs" width="33" height="10" style="display: block; width: 33px; height: 10px;"></canvas>
-        <canvas id="nchart2"class="chartsjs" width="33" height="10" style="display: block; width: 33px; height: 10px;"></canvas>
-        <canvas id="nchart3" class="chartsjs" width="33" height="10" style="display: block; width: 33px; height: 10px;"></canvas>
-        <canvas id="nchart4"class="chartsjs" width="33" height="10" style="display: block; width: 33px; height: 10px;"></canvas>
-        <canvas id="nchart5" class="chartsjs" width="33" height="10" style="display: block; width: 33px; height: 10px;"></canvas>
-        <canvas id="nchart6"class="chartsjs" width="33" height="10" style="display: block; width: 33px; height: 10px;"></canvas>
-    </div>
+    <div id="graficos"></div>
     <div id="end">
     <footer><strong>
         <p>&copy; Gabriel Jesus & Paulo Chimelo</p>
@@ -53,7 +46,6 @@
     <script>
         
         let sFile;
-        
         let datas
     
         document.getElementById('fileUpload').addEventListener('change',(event)=>{
@@ -82,11 +74,50 @@
             }
         })
     
-        document.getElementById('teste').addEventListener('click',()=>{
+        document.getElementById('process').addEventListener('click',()=>{
             
             //document.write(datas.length)
             //document.write("<hr><br>")
+
+            //<canvas id="nchart" class="chartsjs" width="33" height="10" ></canvas>
+            
+            
+
+            for(let i = 1; i <= 42; i++){
+
+                //criando o elemento canvas de forma automática
+                let graf = document.getElementById("graficos")
+                let canv = document.createElement("canvas")
+                graf.appendChild(canv)
+
+                //criando atributos para os canvas
+                let id = document.createAttribute("id")
+                let classe = document.createAttribute("class")
+                let w = document.createAttribute("width")
+                let h = document.createAttribute("height")
+                
+                //atribuindo valores aos atributos
+                id.value = `nchart${i}`
+                classe.value = "chartsjs"
+                w.value = "33"
+                h.value = "10"
+
+                //atribuindo atributos aos elementos criados
+                canv.setAttributeNode(id)
+                canv.setAttributeNode(classe)
+                canv.setAttributeNode(h)
+                canv.setAttributeNode(w)
+
+            }
+
+            
+
+
+
+
             console.log("teste")
+
+            
             let gender ={
                 f:0,
                 m:0,
@@ -208,7 +239,7 @@
             } 
         
         
-                var ctx = document.getElementById("nchart")
+                var ctx = document.getElementById("nchart1")
                 var ctx2 = document.getElementById("nchart2")
                 var ctx1 = document.getElementById("nchart3")
                 var ctx3 = document.getElementById("nchart4")
@@ -328,6 +359,9 @@
                         }
                     }
                 })
+                
+                
+                
         })
     </script>      
 </body>

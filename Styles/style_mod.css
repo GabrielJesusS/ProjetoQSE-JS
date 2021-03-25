@@ -43,11 +43,14 @@ header{
 }
 
 #project a{
-    color:blue ;
+    color: white ;
+    text-decoration: none;
+    font-size: 20px;
 }
 
 #project button{    
-    background:cyan;
+    background: none;
+    border: none;
 }
 
 /*fim css cabeçalho*/
