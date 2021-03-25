@@ -17,7 +17,7 @@
                 <div id="name">
                     <img src="../Content/Images/cpu 70px.png" alt="imagem chip eletronico" href="../index.html">
                     <h1>Projeto - Solução Questionário Socioeconômico</h1>
-                    <div id="project"><a href="../index.html">Retornar</a></div>
+                    <div id="project"><button id="AProje"><a href="../index.html">Retornar</a></button></div>
                 </div>
         </div>
     </header>
@@ -37,12 +37,18 @@
             </div>
     </div>
     <div id="graficos">
-        <canvas id="nchart" class="chartsjs" width="34" height="11" style="display: block; width: 34px; height: 11px;"></canvas>
-        <canvas id="nchart2"class="chartsjs" width="34" height="11" style="display: block; width: 34px; height: 11px;"></canvas>
+        <canvas id="nchart" class="chartsjs" width="33" height="10" style="display: block; width: 33px; height: 10px;"></canvas>
+        <canvas id="nchart2"class="chartsjs" width="33" height="10" style="display: block; width: 33px; height: 10px;"></canvas>
+        <canvas id="nchart3" class="chartsjs" width="33" height="10" style="display: block; width: 33px; height: 10px;"></canvas>
+        <canvas id="nchart4"class="chartsjs" width="33" height="10" style="display: block; width: 33px; height: 10px;"></canvas>
+        <canvas id="nchart5" class="chartsjs" width="33" height="10" style="display: block; width: 33px; height: 10px;"></canvas>
+        <canvas id="nchart6"class="chartsjs" width="33" height="10" style="display: block; width: 33px; height: 10px;"></canvas>
     </div>
+    <div id="end">
     <footer><strong>
         <p>&copy; Gabriel Jesus & Paulo Chimelo</p>
     </strong></footer> 
+    </div>
     <script src="../Scripts/processamento.js"></script>  
     <script>
         
@@ -93,6 +99,33 @@
                 p:0,
                 pe:0
             }
+
+            let gender1 ={
+                a:0,
+                g:0,
+                r:0,
+                d:0
+            }
+            //document.write(datas[0]["6. Qual o seu gênero?"])
+            let gender3 ={
+                m:0,
+                n:0
+            }
+
+            let gender4 ={
+                f:0,
+                i:0,
+                p:0,
+                rc:0,
+                rp:0,
+                s:0
+            }
+            //document.write(datas[0]["6. Qual o seu gênero?"])
+            let gender5 ={
+                s:0,
+                c:0,
+                o:0
+            }
     
             for(let i = 0; i < datas.length; i++){
         
@@ -119,37 +152,182 @@
                 gender2.pe++
             }
             } 
-    
-    
-            var ctx = document.getElementById("nchart")
-    
-            var ctx2 = document.getElementById("nchart2")
-    
-            var chartGraph = new Chart(ctx2,{
-                type: "doughnut",
-                data:{
-                    labels: ["SP","MG","PR", "PE"],
-                    datasets: [{
-                        data:[gender2.s,gender2.m,gender2.p,gender2.pe],
-                        
-                        backgroundColor: ["#1639DB", "#ff6384", "#DBA400", "#FF5733"]
-    
-                    }]
-                }
-            })
-    
-            var chartGraph = new Chart(ctx,{
-                type: "doughnut",
-                data:{
-                    labels: ["Masculino","Feminino","Não sabe responder"],
-                    datasets: [{
-                        data:[gender.m,gender.f,gender.ns],
-                        
-                        backgroundColor: ["#1639DB", "#ff6384", "#DBA400"]
-    
-                    }]
-                }
-            })
+
+            for(let i = 0; i < datas.length; i++){
+        
+            if(datas[i]["1. Qual o seu curso?"] === "Análise e Desenvolvimento de Sistemas (ADS)"){
+                gender1.a++
+            }else if(datas[i]["1. Qual o seu curso?"] === "Gestão de Recursos Humanos (GRH)"){
+                gender1.r++
+            }else if(datas[i]["1. Qual o seu curso?"] === "Gestão de Produção Industrial (GPI)"){
+                gender1.g++
+            }else {
+                gender1.d++  
+            }
+            } 
+            //document.write("<hr><br>")
+            
+
+            for(let i = 0; i < datas.length; i++){
+        
+            if(datas[i]["2. Qual o período que cursa?"] === "Matutino"){
+                gender3.m++
+            }else {
+                gender3.n++
+            }}
+
+
+            for(let i = 0; i < datas.length; i++){
+            
+            if(datas[i]["5. Qual sua cidade de residência?"] === "Franca"){
+                gender4.f++
+            }else if(datas[i]["5. Qual sua cidade de residência?"] === "Ipuã"){
+                gender4.i++
+            }else if(datas[i]["5. Qual sua cidade de residência?"] === "Patrocínio Paulista"){
+                gender4.p++
+            }else if(datas[i]["5. Qual sua cidade de residência?"] === "Ribeirão Corrente"){
+                gender4.rc++
+            }else if(datas[i]["5. Qual sua cidade de residência?"] === "Ribeirão Preto"){
+                gender4.rp++
+            }else{
+                gender4.s++
+            }
+            } 
+            //document.write("<hr><br>")
+            
+
+            for(let i = 0; i < datas.length; i++){
+        
+            if(datas[i]["8. Qual é o seu estado civil?"] === "Solteiro(a)"){
+                gender5.s++
+            }else if(datas[i]["8. Qual é o seu estado civil?"] === "Casado(a) ou União Estável"){
+                gender5.c++
+            }else{
+                gender5.o++
+            }
+            } 
+        
+        
+                var ctx = document.getElementById("nchart")
+                var ctx2 = document.getElementById("nchart2")
+                var ctx1 = document.getElementById("nchart3")
+                var ctx3 = document.getElementById("nchart4")
+                var ctx4 = document.getElementById("nchart5")
+                var ctx5 = document.getElementById("nchart6")
+        
+                var chartGraph = new Chart(ctx2,{
+                    type: "doughnut",
+                    data:{
+                        labels: ["SP","MG","PR", "PE"],
+                        datasets: [{
+                            data:[gender2.s,gender2.m,gender2.p,gender2.pe],
+                            
+                            backgroundColor: ["#1639DB", "#ff6384", "#DBA400", "#FF5733"]
+        
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: '4. Qual o estado do Brasil que você nasceu?'
+                        }
+                    }
+                })
+        
+                var chartGraph = new Chart(ctx,{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Masculino","Feminino","Não sabe responder"],
+                        datasets: [{
+                            data:[gender.m,gender.f,gender.ns],
+                            
+                            backgroundColor: ["#1639DB", "#ff6384", "#DBA400"]
+        
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: '6. Qual o seu gênero?'
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx1,{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Análise e Desenvolvimento de Sistemas (ADS)","Gestão de Recursos Humanos (GRH)","Gestão de Produção Industrial (GPI)", "Desenvolvimento de Software Multi Plataforma (DSM)"],
+                        datasets: [{
+                            data:[gender1.a,gender1.g,gender1.r,gender1.d],
+                            
+                            backgroundColor: ["#1639DB", "#ff6384", "#DBA400", "#FF5733"]
+        
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: '1. Qual o seu curso?'
+                        }
+                    }
+                })
+        
+                var chartGraph = new Chart(ctx3,{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Matutino","Noturno"],
+                        datasets: [{
+                            data:[gender3.m,gender3.n],
+                            
+                            backgroundColor: ["#1639DB", "#ff6384"]
+        
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: '2. Qual o período que cursa?'
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx4,{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Franca","Ipuã","Patrocínio Paulista", "Ribeirão Corrente", "Ribeirão Preto", "S. José da Bela Vista"],
+                        datasets: [{
+                            data:[gender4.f,gender4.i,gender4.p,gender4.rc,gender4.rp,gender4.s],
+                            
+                            backgroundColor: ["#1639DB", "#ff6384", "#DBA400", "#FF5733", "#B9FF4D", "#79B324"]
+        
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: '5. Qual sua cidade de residência?'
+                        }
+                    }
+                })
+        
+                var chartGraph = new Chart(ctx5,{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Solteiro(a)","Casado(a) ou União Estável","Separado(a), desquitado(a), divorciado(a)"],
+                        datasets: [{
+                            data:[gender5.s,gender5.c,gender5.o],
+                            
+                            backgroundColor: ["#1639DB", "#ff6384", "#DBA400"]
+        
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: '8. Qual é o seu estado civil?'
+                        }
+                    }
+                })
         })
     </script>      
 </body>

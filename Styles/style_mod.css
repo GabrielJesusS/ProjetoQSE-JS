@@ -38,10 +38,16 @@ header{
     padding-left: 500px;
     margin: 0 auto;
     padding-top: 27px;
+    
+    
 }
 
 #project a{
-    color: white;
+    color:blue ;
+}
+
+#project button{    
+    background:cyan;
 }
 
 /*fim css cabeçalho*/
