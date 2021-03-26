@@ -248,3 +248,218 @@ let q19d = {
 
 //ultima questão irrelevante
 //fim da questão 19
+
+let q20 = {
+    nsus:0, // uso sus
+    page:0, // pago pela empresa
+    pagp:0, //pago parcialmente pela empresa
+    pf:0, //plano familiar
+    pi:0, // plano individual
+}
+
+//questão 21 a e b
+let q21a = {
+    ne:0, //nenhuma
+    ef1:0, //fundamental1
+    ef2:0, //fundamental2
+    em:0, //ensino medio
+    es:0, //ensino superior
+    pg:0, //pos graduação
+    pfn:0, //prefiro nao responder
+}
+
+let q21b = {
+    ne:0, //nenhuma
+    ef1:0, //fundamental1
+    ef2:0, //fundamental2
+    em:0, //ensino medio
+    es:0, //ensino superior
+    pg:0, //pos graduação
+    pfn:0, //prefiro nao responder
+}
+
+let q22 = {
+    sp:0, //sempre escola publica
+    mp:0, //maior parte escola publica
+    ep:0, // sempre em particular familia
+    pb:0, //sempre particular bolsa
+    epp:0, //maior parte particular familia
+    pcb:0 //maior parte particular bolsa
+}
+
+//questão 23 dividida em 3 perguntas
+let q23a = {
+    na:0, //nunca
+    p:0, //pouco
+    as:0, //as vezes
+    m:0, //muito
+    s:0 //sempre
+}
+
+let q23b = {
+    ec:0, //casa
+    t:0, //trabalho
+    e:0, //escola
+    ou:0, //outros
+}
+
+let q23c = {
+    tp:0, //trabalho profissional
+    te:0, //trabalho escolar
+    e:0, //entretenimento
+    c:0, //comunicação por e-mail
+    op:0, //operações bancárias
+    com:0 //compras
+}
+
+let q24 = {
+    n:0, //nenhum
+    p:0, //pouco
+    i:0,//intermediário
+    a:0 // muito avançado
+}
+
+//questão 25, contem multiplas perguntas e sera realizada em looping usando a variavel abaixo
+let tecno = [
+    "Windows",
+    "Linux",
+    "Editores de textos (Word, Writer, etc.)",
+    "Planilhas eletrônicas (Excel, Calc, etc.)", 
+    "Apresentadores (Powerpoint, Impress, Prezzi, etc.)", 
+    "Sistemas de Gestão Empresaria" ]
+
+let q25 = [
+    {
+        n:0, //nenhum
+        p:0, //pouco
+        i:0,//intermediário
+        a:0 // muito avançado
+    },
+    {
+        n:0, //nenhum
+        p:0, //pouco
+        i:0,//intermediário
+        a:0 // muito avançado
+    },
+    {
+        n:0, //nenhum
+        p:0, //pouco
+        i:0,//intermediário
+        a:0 // muito avançado
+    },
+    {
+        n:0, //nenhum
+        p:0, //pouco
+        i:0,//intermediário
+        a:0 // muito avançado
+    },
+    {
+        n:0, //nenhum
+        p:0, //pouco
+        i:0,//intermediário
+        a:0 // muito avançado
+    },
+    {
+        n:0, //nenhum
+        p:0, //pouco
+        i:0,//intermediário
+        a:0 // muito avançado
+    }
+]
+
+//questão 26, contem multiplas perguntas e sera realizada em looping usando a variavel abaixo
+let lang = [
+    "Inglês",
+    "Espanhol",
+    "Outro Idioma"
+]
+
+let q26 = [
+    {
+      leb:0,
+      ler:0,
+      le:0,
+      l:0,
+      na:0,  
+    },
+    {
+        leb:0,
+        ler:0,
+        le:0,
+        l:0,
+        na:0,  
+    },
+    {
+        leb:0,
+        ler:0,
+        le:0,
+        l:0,
+        na:0,  
+    },
+
+
+]
+
+//questão 27, contem multiplas perguntas e sera realizada em looping usando a variavel abaixo
+
+let comunic = [
+    "Televisores", 
+    "Internet", 
+    "Revistas", 
+    "Jornais", 
+    "Rádio", 
+    "Redes sociais", 
+    "Conversas com Amigos"
+]
+
+let q27 = [
+    {
+        na:0, //nunca
+        p:0, //pouco
+        as:0, //as vezes
+        m:0, //muito
+        s:0 //sempre
+    },
+    {
+        na:0, //nunca
+        p:0, //pouco
+        as:0, //as vezes
+        m:0, //muito
+        s:0 //sempre
+    },
+    {
+        na:0, //nunca
+        p:0, //pouco
+        as:0, //as vezes
+        m:0, //muito
+        s:0 //sempre
+    },
+    {
+        na:0, //nunca
+        p:0, //pouco
+        as:0, //as vezes
+        m:0, //muito
+        s:0 //sempre
+    },
+    {
+        na:0, //nunca
+        p:0, //pouco
+        as:0, //as vezes
+        m:0, //muito
+        s:0 //sempre
+    },
+    {
+        na:0, //nunca
+        p:0, //pouco
+        as:0, //as vezes
+        m:0, //muito
+        s:0 //sempre
+    },
+    {
+        na:0, //nunca
+        p:0, //pouco
+        as:0, //as vezes
+        m:0, //muito
+        s:0 //sempre
+    }
+]

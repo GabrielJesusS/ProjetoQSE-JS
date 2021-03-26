@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="../Content/Images/favicon.ico" type="image/x-icon">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script type="text/javascript" src="../Scripts/objects.js"></script>
     <title>Projeto</title>
 </head>
@@ -538,12 +539,205 @@
                 q19d.regt++
             }
 
-        }  
+
+            //plano de saude
+            if(datas[i]["20. Você tem plano de saúde privado?"] == "Não tenho, uso o SUS"){
+                q20.nsus++
+            }else if(datas[i]["20. Você tem plano de saúde privado?"] == "Tenho e é pago integralmente pela empresa"){
+                q20.page++
+            }else if(datas[i]["20. Você tem plano de saúde privado?"] == "Tenho e é pago parcialmente pela empresa"){
+                q20.pagp++
+            }else if(datas[i]["20. Você tem plano de saúde privado?"] == "Tenho e é um plano familiar"){
+                q20.pf++
+            }else {
+                q20.pi++
+            }
+
+
+            //escolaridade do pai e mãe // 21 a e b
+            if(datas[i]["21.1. Qual o grau de escolaridade do seu pai?"] == 'Nenhuma escolaridade'){
+                q21a.ne++
+            }else if(datas[i]["21.1. Qual o grau de escolaridade do seu pai?"] == 'Ensino fundamental I (1º ao 5º anos)'){
+                q21a.ef1++
+            }else if(datas[i]["21.1. Qual o grau de escolaridade do seu pai?"] == 'Ensino fundamental II (6º ao 9º anos)'){
+                q21a.ef2++
+            }else if(datas[i]["21.1. Qual o grau de escolaridade do seu pai?"] == 'Ensino Médio'){
+                q21a.em++
+            }else if(datas[i]["21.1. Qual o grau de escolaridade do seu pai?"] == 'Ensino Superior'){
+                q21a.es++
+            }else if(datas[i]["21.1. Qual o grau de escolaridade do seu pai?"] == 'Pós-graduação'){
+                q21a.pg++
+            }else {
+                q21a.pfn++
+            }
+
+            if(datas[i]["21.2. Qual o grau de escolaridade da sua mãe?"] == 'Nenhuma escolaridade'){
+                q21b.ne++
+            }else if(datas[i]["21.2. Qual o grau de escolaridade da sua mãe?"] == 'Ensino fundamental I (1º ao 5º anos)'){
+                q21b.ef1++
+            }else if(datas[i]["21.2. Qual o grau de escolaridade da sua mãe?"] == 'Ensino fundamental II (6º ao 9º anos)'){
+                q21b.ef2++
+            }else if(datas[i]["21.2. Qual o grau de escolaridade da sua mãe?"] == 'Ensino Médio'){
+                q21b.em++
+            }else if(datas[i]["21.2. Qual o grau de escolaridade da sua mãe?"] == 'Ensino Superior'){
+                q21b.es++
+            }else if(datas[i]["21.2. Qual o grau de escolaridade da sua mãe?"] == 'Pós-graduação'){
+                q21b.pg++
+            }else {
+                q21b.pfn++
+            }
+
+
+            //sua escolaridade
+            if(datas[i]["22. Na sua vida escolar você estudou"] == 'Sempre em escola pública'){
+                q22.sp++
+            }else if(datas[i]["22. Na sua vida escolar você estudou"] == 'A maior parte em escola pública'){
+                q22.mp++
+            }else if(datas[i]["22. Na sua vida escolar você estudou"] == 'Sempre em escola particular paga pela família'){
+                q22.ep++
+            }else if(datas[i]["22. Na sua vida escolar você estudou"] == 'Sempre em escola particular com bolsa'){
+                q22.pb++
+            }else if(datas[i]["22. Na sua vida escolar você estudou"] == 'A maior parte em escola particular paga pela família'){
+                q22.epp++
+            }else {
+                q22.pcb++
+            }
+            
+
+            //questão 23 dividida em 3 perguntas
+            if(datas[i]["23.1. Com que frequência você utiliza microcomputadores?"] == 'Nunca'){
+                q23a.na++
+            }else if(datas[i]["23.1. Com que frequência você utiliza microcomputadores?"] == 'Pouco'){
+                q23a.p++
+            }else if(datas[i]["23.1. Com que frequência você utiliza microcomputadores?"] == 'Ás vezes'){
+                q23a.as++
+            }else if(datas[i]["23.1. Com que frequência você utiliza microcomputadores?"] == 'Muito'){
+                q23a.m++
+            }else {
+                q23a.s++
+            }
+
+            if(datas[i]["23.2. Onde você utiliza microcomputadores?"].indexOf("casa") > -1){
+                q23b.ec++
+            }
+            if(datas[i]["23.2. Onde você utiliza microcomputadores?"].indexOf("trabalho") > -1){
+                q23b.t++
+            }
+            if(datas[i]["23.2. Onde você utiliza microcomputadores?"].indexOf("escola") > -1){
+                q23b.e++
+            }
+            if(datas[i]["23.2. Onde você utiliza microcomputadores?"].indexOf("outros") > -1){
+                q23b.ou++
+            }
+            
+
+            if(datas[i]["23.3. Com qual finalidade você utiliza microcomputadores?"].indexOf("profissionais") > -1){
+                q23c.tp++
+            }
+            if(datas[i]["23.3. Com qual finalidade você utiliza microcomputadores?"].indexOf("escolares") > -1){
+                q23c.te++
+            }
+            if(datas[i]["23.3. Com qual finalidade você utiliza microcomputadores?"].indexOf("entretenimento") > -1){
+                q23c.e++
+            }
+            if(datas[i]["23.3. Com qual finalidade você utiliza microcomputadores?"].indexOf("e-mail") > -1){
+                q23c.c++
+            }
+            if(datas[i]["23.3. Com qual finalidade você utiliza microcomputadores?"].indexOf("operações") > -1){
+                q23c.op++
+            }
+            if(datas[i]["23.3. Com qual finalidade você utiliza microcomputadores?"].indexOf("compras") > -1){
+                q23c.com++
+            }
+            
+
+            //conhecimento em informática
+            if(datas[i]["24. Como você classifica seu conhecimento em informática"] == 'Nenhum'){
+                q24.n++
+            }else if(datas[i]["24. Como você classifica seu conhecimento em informática"] == 'Pouco'){
+                q24.p++
+            }else if(datas[i]["24. Como você classifica seu conhecimento em informática"] == 'Intermediário'){
+                q24.i++
+            }else {
+                q24.a++
+            }
+
+
+            //conhecimento de softwares
+            for(let k = 0; k < 6; k++){
+                if(datas[i][`25. Qual o seu conhecimento em relação aos aplicativos a seguir? [${tecno[k]}]`] == "Nenhum"){
+                    q25[k].n++
+                    
+                }else if(datas[i][`25. Qual o seu conhecimento em relação aos aplicativos a seguir? [${tecno[k]}]`] == "Pouco"){
+                    q25[k].p++
+                    
+                }else if(datas[i][`25. Qual o seu conhecimento em relação aos aplicativos a seguir? [${tecno[k]}]`] == "Intermediário"){
+                    q25[k].i++
+                    
+                }else if(datas[i][`25. Qual o seu conhecimento em relação aos aplicativos a seguir? [${tecno[k]}]`] == "Muito Avançado"){
+                    q25[k].a++
+                    
+                }
+
+                
+
+            }
+
+            //26 linguas
+            for(let k = 0; k < 3; k++){
+                if(datas[i][`26. Agora, considere seu conhecimento sobre idiomas [${lang[k]}]`] == "Leio, escrevo e falo bem"){
+                    q26[k].leb++
+                    
+                }else if(datas[i][`26. Agora, considere seu conhecimento sobre idiomas [${lang[k]}]`] == "Leio, escrevo e falo razoavelmente"){
+                    q26[k].ler++
+                    
+                }else if(datas[i][`26. Agora, considere seu conhecimento sobre idiomas [${lang[k]}]`] == "Leio e escrevo mas não falo"){
+                    q26[k].le++
+                    
+                }else if(datas[i][`26. Agora, considere seu conhecimento sobre idiomas [${lang[k]}]`] == "Leio mas não escrevo nem falo"){
+                    q26[k].l++
+                    
+                }else if(datas[i][`26. Agora, considere seu conhecimento sobre idiomas [${lang[k]}]`] == "Praticamente nula"){
+                    q26[k].na++
+                    
+                } 
+
+                
+
+            }
+
+
+            //27 meios de comunicação
+            for(let k = 0; k < 7; k++){
+                if(datas[i][`27. Considere a busca por informação nos seguintes meios de comunicação [${comunic[k]}]`] == "Nunca"){
+                    q27[k].na++
+                    
+                } else if(datas[i][`27. Considere a busca por informação nos seguintes meios de comunicação [${comunic[k]}]`] == "Pouco"){
+                    q27[k].p++
+                    
+                }else if(datas[i][`27. Considere a busca por informação nos seguintes meios de comunicação [${comunic[k]}]`] == "Às vezes"){
+                    q27[k].as++
+                    
+                }else if(datas[i][`27. Considere a busca por informação nos seguintes meios de comunicação [${comunic[k]}]`] == "Muito"){
+                    q27[k].m++
+                    
+                }else if(datas[i][`27. Considere a busca por informação nos seguintes meios de comunicação [${comunic[k]}]`] == "Sempre"){
+                    q27[k].s++
+                    
+                }
+
+            }
+        }
+        
         //fim das contagens
 
         //criação dos gráficos
 
-        
+        Chart.helpers.merge(Chart.defaults.global.plugins.datalabels, {
+            color: '#ffffff'
+        });
+        Chart.defaults.global.defaultFontSize = 18;
+
             let colors = "'#0000FF', '#FF1493', '#00FFFF', '#00FF7F', '#FF0000', '#FFFF00', '#FFFF00', '#FFFF00', '#D2691E', '#32CD32', '#7FFFD4', '#4682B4'"
             let ctx = []
             for(let i = 1; i <= 70; i++){
@@ -566,7 +760,8 @@
                             display: true,
                             text: '4. Qual o estado do Brasil que você nasceu?',
                             fontSize: 20
-                        }
+                        },
+
                     }
                 })
         
@@ -1153,6 +1348,240 @@
                         }
                     }
                 })
+
+                var chartGraph = new Chart(ctx[30],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Não tenho, uso o SUS', 'Tenho e é pago integralmente pela empresa', 'Tenho e é pago parcialmente pela empresa', 'Tenho e é um plano familiar', 'Tenho e é um plano individual'],
+                        datasets: [{
+                            data:[q20.nsus,q20.page,q20.pagp,q20.pf,q20.pi,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "20. Você tem plano de saúde privado?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[31],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Nenhuma escolaridade', 'Ensino fundamental I (1º ao 5º anos)', 'Ensino fundamental II (6º ao 9º anos)', 'Ensino Médio', 'Ensino Superior','Pós-graduação', 'Prefiro não responder'],
+                        datasets: [{
+                            data:[q21a.ne,q21a.ef1,q21a.ef2,q21a.em,q21a.es,q21a.pg,q21a.pfn,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "21.1. Qual o grau de escolaridade do seu pai?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[32],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Nenhuma escolaridade', 'Ensino fundamental I (1º ao 5º anos)', 'Ensino fundamental II (6º ao 9º anos)', 'Ensino Médio', 'Ensino Superior','Pós-graduação', 'Prefiro não responder'],
+                        datasets: [{
+                            data:[q21b.ne,q21b.ef1,q21b.ef2,q21b.em,q21b.es,q21b.pg,q21b.pfn,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "21.2. Qual o grau de escolaridade da sua mãe?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[33],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Sempre em escola pública', 'A maior parte em escola pública','Sempre em escola particular paga pela família', 'Sempre em escola particular com bolsa','A maior parte em escola particular paga pela família', 'A maior parte em escola particular com bolsa',],
+                        datasets: [{
+                            data:[q22.sp,q22.mp,q22.ep,q22.pb,q22.epp,q22.pcb,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "22. Na sua vida escolar você estudou",
+                            fontSize: 20
+                        }
+                    }
+                })
+                
+                var chartGraph = new Chart(ctx[34],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Nunca', 'Pouco', 'Ás vezes', 'Muito', 'Sempre',],
+                        datasets: [{
+                            data:[q23a.na,q23a.p,q23a.as,q23a.m,q23a.s,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "23.1. Com que frequência você utiliza microcomputadores?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[35],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Em casa', 'No trabalho', 'Na escola', 'Em outros lugares',],
+                        datasets: [{
+                            data:[q23b.ec,q23b.t,q23b.e,q23b.ou,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "23.2. Onde você utiliza microcomputadores?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[36],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Para trabalhos profissionais', 'Para trabalhos escolares', 'Para entretenimento (músicas, vídeos, redes sociais, etc)', 'Para comunicação por e-mail', 'Para operações bancárias', 'Para compras eletrônicas',],
+                        datasets: [{
+                            data:[q23c.tp,q23c.te,q23c.e,q23c.c,q23c.op,q23c.com,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "23.3. Com qual finalidade você utiliza microcomputadores?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[37],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Nenhum', 'Pouco', 'Intermediário', 'Muito Avançado'],
+                        datasets: [{
+                            data:[q24.n,q24.p,q24.i,q24.a,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "24. Como você classifica seu conhecimento em informática",
+                            fontSize: 20
+                        },
+                        
+                    }
+                })
+
+                for(let k = 0; k < 6; k++){
+                    var chartGraph = new Chart(ctx[38+k],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Nenhum', 'Pouco', 'Intermediário', 'Muito Avançado'],
+                        datasets: [{
+                            
+                            data:[q25[k].n, q25[k].p, q25[k].i, q25[k].a,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: `25. Qual o seu conhecimento em relação aos aplicativos a seguir? [${tecno[k]}]`,
+                            fontSize: 20
+                            },
+                        
+                        }
+                    })
+                }
+
+                for(let k = 0; k < 3; k++){
+                    var chartGraph = new Chart(ctx[44+k],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Leio, escrevo e falo bem', 'Leio, escrevo e falo razoavelmente', 'Leio e escrevo mas não falo', 'Leio mas não escrevo nem falo', 'Praticamente nula',],
+                        datasets: [{
+                            
+                            data:[q26[k].leb, q26[k].ler, q26[k].le, q26[k].l, q26[k].na,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: `26. Agora, considere seu conhecimento sobre idiomas [${lang[k]}]`,
+                            fontSize: 20
+                            },
+                        
+                        }
+                    })
+                }
+
+                for(let k = 0; k < 6; k++){
+                    var chartGraph = new Chart(ctx[47+k],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Nunca', 'Pouco', 'Às vezes', 'Muito', 'Sempre',],
+                        datasets: [{
+                            
+                            data:[q27[k].na,q27[k].p,q27[k].as,q27[k].m,q27[k].s,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: `27. Considere a busca por informação nos seguintes meios de comunicação [${comunic[k]}]`,
+                            fontSize: 20
+                            },
+                        
+                        }
+                    })
+                }
+                
                 
             }
             
