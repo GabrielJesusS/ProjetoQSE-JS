@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="../Content/Images/favicon.ico" type="image/x-icon">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script type="text/javascript" src="../Scripts/objects.js"></script>
     <title>Projeto</title>
 </head>
 <body>
@@ -80,10 +81,12 @@
             //document.write("<hr><br>")
 
             //<canvas id="nchart" class="chartsjs" width="33" height="10" ></canvas>
-            
+            if(datas === undefined){ 
+                alert("Nenhuma planilha foi inserida")
+            }else{
             
 
-            for(let i = 1; i <= 42; i++){
+            for(let i = 1; i <= 70; i++){
 
                 //criando o elemento canvas de forma automática
                 let graf = document.getElementById("graficos")
@@ -110,468 +113,1049 @@
 
             }
 
-            
-
-
-
-
             console.log("teste")
 
             
-            let gender ={
-                f:0,
-                m:0,
-                ns:0
-            }
-            //document.write(datas[0]["6. Qual o seu gênero?"])
-            let gender2 ={
-                s:0,
-                m:0,
-                p:0,
-                pe:0
-            }
-
-            let gender1 ={
-                a:0,
-                g:0,
-                r:0,
-                d:0
-            }
-            //document.write(datas[0]["6. Qual o seu gênero?"])
-            let gender3 ={
-                m:0,
-                n:0
-            }
-
-            let gender4 ={
-                f:0,
-                i:0,
-                p:0,
-                rc:0,
-                rp:0,
-                s:0
-            }
-            //document.write(datas[0]["6. Qual o seu gênero?"])
-            let gender5 ={
-                s:0,
-                c:0,
-                o:0
-            }
-
-            let gender6 ={//Possir deficiencia
-                n:0,
-                v:0
-            }
-
-            let gender7 ={//Conviver Deficiencia
-                ad:0,
-                at:0,
-                s:0,
-                n:0
-
-            }
-
-            let gender8 ={//Quantidade de filhos
-                n:0,
-                u:0,
-                d:0,
-                t:0
-            }
-
-            let gender9 ={//Com quem voce vive
-                a:0,
-                e:0,
-                p:0,
-                s:0
-            }
-
-            let gender10 ={//Quantas pessoas na sua casa
-                a:0,
-                b:0,
-                c:0,
-                d:0,
-                e:0,
-                f:0,
-                g:0
-            }
-
            
-    
+            //fim das variáveis
+
+            //inicio das contagens
             for(let i = 0; i < datas.length; i++){
-        
+                //genero
             if(datas[i]["6. Qual o seu gênero?"] === "Feminino"){
-                gender.f++
+                q6.f++
             }else if(datas[i]["6. Qual o seu gênero?"] === "Masculino"){
-                gender.m++
+                q6.m++
             }else{
-                gender.ns++
+                q6.ns++
             }
-            } 
-            //document.write("<hr><br>")
-            
-    
-            for(let i = 0; i < datas.length; i++){
         
+        
+            //estado
             if(datas[i]["4. Qual o estado do Brasil que você nasceu?"] === "São Paulo (SP)"){
-                gender2.s++
+                q4.s++
             }else if(datas[i]["4. Qual o estado do Brasil que você nasceu?"] === "Minas Gerais (MG)"){
-                gender2.m++
+                q4.m++
             }else if(datas[i]["4. Qual o estado do Brasil que você nasceu?"] === "Paraná (PR)"){
-                gender2.p++
+                q4.p++
             }else{
-                gender2.pe++
+                q4.pe++
             }
-            } 
-
-            for(let i = 0; i < datas.length; i++){
+             
         
+            //curso
             if(datas[i]["1. Qual o seu curso?"] === "Análise e Desenvolvimento de Sistemas (ADS)"){
-                gender1.a++
+                q1.a++
             }else if(datas[i]["1. Qual o seu curso?"] === "Gestão de Recursos Humanos (GRH)"){
-                gender1.r++
+                q1.r++
             }else if(datas[i]["1. Qual o seu curso?"] === "Gestão de Produção Industrial (GPI)"){
-                gender1.g++
+                q1.g++
             }else {
-                gender1.d++  
+                q1.d++  
             }
-            } 
-            //document.write("<hr><br>")
-            
+             
 
-            for(let i = 0; i < datas.length; i++){
-        
+            //periodo
             if(datas[i]["2. Qual o período que cursa?"] === "Matutino"){
-                gender3.m++
+                q2.m++
             }else {
-                gender3.n++
-            }}
+                q2.n++
+            }
 
 
-            for(let i = 0; i < datas.length; i++){
-            
+            //cidade
             if(datas[i]["5. Qual sua cidade de residência?"] === "Franca"){
-                gender4.f++
+                q5.f++
             }else if(datas[i]["5. Qual sua cidade de residência?"] === "Ipuã"){
-                gender4.i++
+                q5.i++
             }else if(datas[i]["5. Qual sua cidade de residência?"] === "Patrocínio Paulista"){
-                gender4.p++
+                q5.p++
             }else if(datas[i]["5. Qual sua cidade de residência?"] === "Ribeirão Corrente"){
-                gender4.rc++
+                q5.rc++
             }else if(datas[i]["5. Qual sua cidade de residência?"] === "Ribeirão Preto"){
-                gender4.rp++
+                q5.rp++
             }else{
-                gender4.s++
+                q5.s++
             }
-            } 
-            //document.write("<hr><br>")
             
 
-            for(let i = 0; i < datas.length; i++){
-        
+            //calculo de idade
+                let date = new Date()
+                let ano = date.getFullYear()
+                let idade = datas[i]["7. Qual a sua data de nascimento?"]
+                let anob =  ano - 1900
+                let days = 0
+                
+                for(let j = 1; j <= anob; j++){
+                    if(j%4 === 0){
+                        days+=366
+                    }
+                    else{
+                        days+=365
+                    }
+                }
+
+                idade = days - idade
+                idade = idade/365
+                idade = Math.round(idade)
+                
+
+                if(idade >= 18 && idade <= 20){
+                    q7["18e20"]++
+                }else if(idade >= 21 && idade <= 25){
+                    q7["21e25"]++
+                }else if(idade >= 26 && idade <= 30){
+                    q7["26e30"]++
+                }else if(idade >= 31 && idade <= 50){
+                    q7["31e50"]++
+                }else if(idade > 50){
+                    q7["m50"]++
+                }
+
+
+            //estado civil
             if(datas[i]["8. Qual é o seu estado civil?"] === "Solteiro(a)"){
-                gender5.s++
+                q8.s++
             }else if(datas[i]["8. Qual é o seu estado civil?"] === "Casado(a) ou União Estável"){
-                gender5.c++
+                q8.c++
             }else{
-                gender5.o++
+                q8.o++
             }
-            } 
-
-            for(let i = 0; i < datas.length; i++){
         
+            
+            //necessidade
             if(datas[i]["9. Você é portador de alguma necessidade especial?(Pode selecionar mais de uma, se for o caso)"] === "Visual"){
-                gender6.v++
+                q9.v++
             }else {
-                gender6.n++
+                q9.n++
             }
-            } 
-
-            for(let i = 0; i < datas.length; i++){
             
+            
+            //mora com alguem com necessidade
             if(datas[i]["10. Você convive ou mora com alguma pessoa com deficiência?"] === "Autismo"){
-                gender7.at++
+                q10.at++
             }else if(datas[i]["10. Você convive ou mora com alguma pessoa com deficiência?"] === "Auditiva"){
-                gender7.ad++
+                q10.ad++
             }else if(datas[i]["10. Você convive ou mora com alguma pessoa com deficiência?"] === "Síndrome de Down"){
-                gender7.s++
+                q10.s++
             }else{
-                gender7.n++
+                q10.n++
             }
-            } 
+             
 
-            for(let i = 0; i < datas.length; i++){
-            
+            //quantos filhos
             if(datas[i]["11. Quantos filhos você tem?"] === "Um"){
-                gender8.u++
+                q11.u++
             }else if(datas[i]["11. Quantos filhos você tem?"] === "Dois"){
-                gender8.d++
+                q11.d++
             }else if(datas[i]["11. Quantos filhos você tem?"] === "Três"){
-                gender8.t++
+                q11.t++
             }else{
-                gender8.n++
+                q11.n++
             }
-            } 
-
-            for(let i = 0; i < datas.length; i++){
             
+
+            //com quem mora
             if(datas[i]["12. Com quem você mora atualmente?"] === "Com amigos (compartilhando despesas) ou de favor"){
-                gender9.a++
+                q12.a++
             }else if(datas[i]["12. Com quem você mora atualmente?"] === "Com esposa(o) e(ou) filho(s)"){
-                gender9.e++
+                q12.e++
             }else if(datas[i]["12. Com quem você mora atualmente?"] === "Com pais e(ou) parentes"){
-                gender9.p++
+                q12.p++
             }else{
-                gender9.s++
+                q12.s++
             }
+             
+
+            //quantas pessoas moram na casa
+            if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 1){
+                q13.a++
+            }else if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 2){
+                q13.b++
+            }else if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 3){
+                q13.c++
+            }else if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 4){
+                q13.d++
+            }else if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 5){
+                q13.e++
+            }else if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 6){
+                q13.f++
+            }else{
+                q13.g++
+            }
+            
+            //situação do domicilio
+            if(datas[i]["14. Qual a situação do domicílio onde mora?"] === "Próprio"){
+                q14.p++
+            }else if(datas[i]["14. Qual a situação do domicílio onde mora?"] === "Alugado"){
+                q14.a++
+            }else if(datas[i]["14. Qual a situação do domicílio onde mora?"] === "Cedido"){
+                q14.c++
+            }else if(datas[i]["14. Qual a situação do domicílio onde mora?"] === "Financiado"){
+                q14.f++
+            }else if(datas[i]["14. Qual a situação do domicílio onde mora?"] === "Arrendado"){
+                q14.ar++
+            }else{
+                q14.men++
+            }
+
+
+            //tempo de moradia
+            let temp = datas[i]["15. Tempo de moradia neste domicílio (Em anos)"]
+            if(temp >= 1 && temp <= 5){
+                q15["1e5"]++
+            }else if(temp >= 6 && temp <= 10){
+                q15["6e10"]++
+            }else if(temp >= 11 && temp <= 15){
+                q15["11e15"]++
+            }else if(temp >= 16 && temp <= 20){
+                q15["16e20"]++
+            }else{
+                q15["m20"]++
+            }
+
+
+            //renda mensal familiar
+            if(datas[i]["16. Qual a faixa de renda mensal da sua família (em Salários Mínimos)"] === "Até dois salários mínimos"){
+                q16["a2"]++
+            }else if(datas[i]["16. Qual a faixa de renda mensal da sua família (em Salários Mínimos)"] === "Mais de dois até cinco salários mínimos"){
+                q16["m2a5"]++
+            }else if(datas[i]["16. Qual a faixa de renda mensal da sua família (em Salários Mínimos)"] === "Mais de cinco até dez salários mínimos"){
+                q16["m5a10"]++
+            }else if(datas[i]["16. Qual a faixa de renda mensal da sua família (em Salários Mínimos)"] === "Mais de dez até vinte salários mínimos"){
+                q16["m10a20"]++
+            }else if(datas[i]["16. Qual a faixa de renda mensal da sua família (em Salários Mínimos)"] === "Mais de vinte salários mínimos"){
+                q16["m20"]++
+            }else{
+                q16['pf']++
+            }
+
+
+            //questão 17 é dividida em 10 perguntas, de a até j
+
+            if(datas[i]["17.1. Quantas geladeiras há em seu domicílio."] == 0){
+                q17a.zero++
+            }else if(datas[i]["17.1. Quantas geladeiras há em seu domicílio."] == 1){
+                q17a.um++
+            }else if(datas[i]["17.1. Quantas geladeiras há em seu domicílio."] == 2){
+                q17a.dois++
+            }else if(datas[i]["17.1. Quantas geladeiras há em seu domicílio."] == 3){
+                q17a.tres++
+            }else  if(datas[i]["17.1. Quantas geladeiras há em seu domicílio."] == 4){
+                q17a.quat++
+            }else{
+                q17a.mquat++
+            }
+
+            if(datas[i]["17.2. Quantos celulares comuns há em seu domicílio?"] == 0){
+                q17b.zero++
+            }else if(datas[i]["17.2. Quantos celulares comuns há em seu domicílio?"] == 1){
+                q17b.um++
+            }else if(datas[i]["17.2. Quantos celulares comuns há em seu domicílio?"] == 2){
+                q17b.dois++
+            }else if(datas[i]["17.2. Quantos celulares comuns há em seu domicílio?"] == 3){
+                q17b.tres++
+            }else  if(datas[i]["17.2. Quantos celulares comuns há em seu domicílio?"] == 4){
+                q17b.quat++
+            }else{
+                q17b.mquat++
+            }
+
+            if(datas[i]["17.3. Quantos micro-ondas há em seu domicílio?"] == 0){
+                q17c.zero++
+            }else if(datas[i]["17.3. Quantos micro-ondas há em seu domicílio?"] == 1){
+                q17c.um++
+            }else if(datas[i]["17.3. Quantos micro-ondas há em seu domicílio?"] == 2){
+                q17c.dois++
+            }else if(datas[i]["17.3. Quantos micro-ondas há em seu domicílio?"] == 3){
+                q17c.tres++
+            }else  if(datas[i]["17.3. Quantos micro-ondas há em seu domicílio?"] == 4){
+                q17c.quat++
+            }else{
+                q17c.mquat++
+            }
+
+            if(datas[i]["17.4. Quantos notebooks há em seu domicílio?"] == 0){
+                q17d.zero++
+            }else if(datas[i]["17.4. Quantos notebooks há em seu domicílio?"] == 1){
+                q17d.um++
+            }else if(datas[i]["17.4. Quantos notebooks há em seu domicílio?"] == 2){
+                q17d.dois++
+            }else if(datas[i]["17.4. Quantos notebooks há em seu domicílio?"] == 3){
+                q17d.tres++
+            }else  if(datas[i]["17.4. Quantos notebooks há em seu domicílio?"] == 4){
+                q17d.quat++
+            }else{
+                q17d.mquat++
+            }
+
+            if(datas[i]["17.5. Quantas máquinas de lavar roupa e(ou) tanquinho há em seu domicílio?"] == 0){
+                q17e.zero++
+            }else if(datas[i]["17.5. Quantas máquinas de lavar roupa e(ou) tanquinho há em seu domicílio?"] == 1){
+                q17e.um++
+            }else if(datas[i]["17.5. Quantas máquinas de lavar roupa e(ou) tanquinho há em seu domicílio?"] == 2){
+                q17e.dois++
+            }else if(datas[i]["17.5. Quantas máquinas de lavar roupa e(ou) tanquinho há em seu domicílio?"] == 3){
+                q17e.tres++
+            }else  if(datas[i]["17.5. Quantas máquinas de lavar roupa e(ou) tanquinho há em seu domicílio?"] == 4){
+                q17e.quat++
+            }else{
+                q17e.mquat++
+            }
+
+            if(datas[i]["17.6. Quantas motocicletas há em seu domicílio?"] == 0){
+                q17f.zero++
+            }else if(datas[i]["17.6. Quantas motocicletas há em seu domicílio?"] == 1){
+                q17f.um++
+            }else if(datas[i]["17.6. Quantas motocicletas há em seu domicílio?"] == 2){
+                q17f.dois++
+            }else if(datas[i]["17.6. Quantas motocicletas há em seu domicílio?"] == 3){
+                q17f.tres++
+            }else  if(datas[i]["17.6. Quantas motocicletas há em seu domicílio?"] == 4){
+                q17f.quat++
+            }else{
+                q17f.mquat++
+            }
+
+            if(datas[i]["17.7. Quantos automóveis há em seu domicílio?"] == 0){
+                q17g.zero++
+            }else if(datas[i]["17.7. Quantos automóveis há em seu domicílio?"] == 1){
+                q17g.um++
+            }else if(datas[i]["17.7. Quantos automóveis há em seu domicílio?"] == 2){
+                q17g.dois++
+            }else if(datas[i]["17.7. Quantos automóveis há em seu domicílio?"] == 3){
+                q17g.tres++
+            }else  if(datas[i]["17.7. Quantos automóveis há em seu domicílio?"] == 4){
+                q17g.quat++
+            }else{
+                q17g.mquat++
+            }
+
+            if(datas[i]["17.8. Quantos vídeos cassete e(ou) DVD players há em seu domicílio?"] == 0){
+                q17h.zero++
+            }else if(datas[i]["17.8. Quantos vídeos cassete e(ou) DVD players há em seu domicílio?"] == 1){
+                q17h.um++
+            }else if(datas[i]["17.8. Quantos vídeos cassete e(ou) DVD players há em seu domicílio?"] == 2){
+                q17h.dois++
+            }else if(datas[i]["17.8. Quantos vídeos cassete e(ou) DVD players há em seu domicílio?"] == 3){
+                q17h.tres++
+            }else  if(datas[i]["17.8. Quantos vídeos cassete e(ou) DVD players há em seu domicílio?"] == 4){
+                q17h.quat++
+            }else{
+                q17h.mquat++
+            }
+
+            if(datas[i]["17.9. Quantos televisores há em seu domicílio?"] == 0){
+                q17i.zero++
+            }else if(datas[i]["17.9. Quantos televisores há em seu domicílio?"] == 1){
+                q17i.um++
+            }else if(datas[i]["17.9. Quantos televisores há em seu domicílio?"] == 2){
+                q17i.dois++
+            }else if(datas[i]["17.9. Quantos televisores há em seu domicílio?"] == 3){
+                q17i.tres++
+            }else  if(datas[i]["17.9. Quantos televisores há em seu domicílio?"] == 4){
+                q17i.quat++
+            }else{
+                q17i.mquat++
+            }
+
+            if(datas[i]["17.10. Quantos smartphones há em seu domicílio?"] == 0){
+                q17j.zero++
+            }else if(datas[i]["17.10. Quantos smartphones há em seu domicílio?"] == 1){
+                q17j.um++
+            }else if(datas[i]["17.10. Quantos smartphones há em seu domicílio?"] == 2){
+                q17j.dois++
+            }else if(datas[i]["17.10. Quantos smartphones há em seu domicílio?"] == 3){
+                q17j.tres++
+            }else  if(datas[i]["17.10. Quantos smartphones há em seu domicílio?"] == 4){
+                q17j.quat++
+            }else{
+                q17j.mquat++
+            }
+            
+            
+            //no seu domicilio tem?
+            if(datas[i]["18. No seu domicílio tem?"].indexOf("Telefone") > -1){
+                q18.tel++}
+            if(datas[i]["18. No seu domicílio tem?"].indexOf("Internet") > -1){
+                q18.inte++}
+            if(datas[i]["18. No seu domicílio tem?"].indexOf("Tv") > -1){
+                q18.tv++}
+            if(datas[i]["18. No seu domicílio tem?"].indexOf("Empregada") > -1){
+                q18.emp++}
+            if(datas[i]["18. No seu domicílio tem?"].indexOf("Nenhuma") > -1){
+                q18.na++}
+            
+            
+            //questão 19 dividida em 4 perguntas
+            if(datas[i]["19.1. Você trabalha?"] === "Sim") {
+                q19a.s++
+            }else{
+                q19a.n++
+            }
+
+            if(datas[i]["19.2. Qual o seu vínculo com o emprego?"] == "Não trabalho"){
+                q19b.nt++
+            }else if(datas[i]["19.2. Qual o seu vínculo com o emprego?"] == "Sou registrado em indústria (calçados/confecções/outras)"){
+                q19b.sri++
+            }else if(datas[i]["19.2. Qual o seu vínculo com o emprego?"] == "Sou registrado no comércio"){
+                q19b.src++
+            }else if(datas[i]["19.2. Qual o seu vínculo com o emprego?"] == "Sou registrado em empresa prestadora de serviços"){
+                q19b.sre++
+            }else if(datas[i]["19.2. Qual o seu vínculo com o emprego?"] == "Sou registrado em empresa pública (federal/estadual/municipal)"){
+                q19b.sep++
+            }else if(datas[i]["19.2. Qual o seu vínculo com o emprego?"] == "Sou autônomo"){
+                q19b.sat++
+            }else if(datas[i]["19.2. Qual o seu vínculo com o emprego?"] == "Sou empresário"){
+                q19b.semp++
+            }else {
+                q19b.sest++
             } 
 
-            for(let i = 0; i < datas.length; i++){
-            
-            if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 1){
-                gender10.a++
-            }else if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 2){
-                gender10.b++
-            }else if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 3){
-                gender10.c++
-            }else if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 4){
-                gender10.d++
-            }else if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 5){
-                gender10.e++
-            }else if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 6){
-                gender10.f++
+            if(datas[i]["19.3. Qual a área do seu trabalho?"] == "Não trabalho"){
+                q19c.nt++
+            }else if(datas[i]["19.3. Qual a área do seu trabalho?"] == "Trabalho na área do curso"){
+                q19c.tac++
+            }else {
+                q19c.tfc++
+            }    
+
+            if(datas[i]["19.4. Qual seu horário de trabalho?"] == "Não trabalho"){
+                q19d.nt++
+            }else if(datas[i]["19.4. Qual seu horário de trabalho?"] == "Manhã"){
+                q19d.m++
+            }else if(datas[i]["19.4. Qual seu horário de trabalho?"] == "Tarde"){
+                q19d.t++
+            }else if(datas[i]["19.4. Qual seu horário de trabalho?"] == "Noite"){
+                q19d.n++
+            }else if(datas[i]["19.4. Qual seu horário de trabalho?"] == "Manhã e tarde"){
+                q19d.mt++
+            }else if(datas[i]["19.4. Qual seu horário de trabalho?"] == "Manhã e noite"){
+                q19d.mn++
+            }else if(datas[i]["19.4. Qual seu horário de trabalho?"] == "Tarde e noite"){
+                q19d.tn++
             }else{
-                gender10.g++
-            }
+                q19d.regt++
             }
 
-            
-        
-        
-                var ctx = document.getElementById("nchart1")
-                var ctx2 = document.getElementById("nchart2")
-                var ctx1 = document.getElementById("nchart3")
-                var ctx3 = document.getElementById("nchart4")
-                var ctx4 = document.getElementById("nchart5")
-                var ctx5 = document.getElementById("nchart6")
-                var ctx6 = document.getElementById("nchart7")
-                var ctx7 = document.getElementById("nchart8")
-                var ctx8 = document.getElementById("nchart9")
-                var ctx9 = document.getElementById("nchart10")
-                var ctx10 = document.getElementById("nchart11")
+        }  
+        //fim das contagens
+
+        //criação dos gráficos
 
         
-                var chartGraph = new Chart(ctx1,{
+            let colors = "'#0000FF', '#FF1493', '#00FFFF', '#00FF7F', '#FF0000', '#FFFF00', '#FFFF00', '#FFFF00', '#D2691E', '#32CD32', '#7FFFD4', '#4682B4'"
+            let ctx = []
+            for(let i = 1; i <= 70; i++){
+                ctx.push(document.getElementById(`nchart${i}`))
+            }
+
+                var chartGraph = new Chart(ctx[2],{
                     type: "doughnut",
                     data:{
                         labels: ["SP","MG","PR", "PE"],
                         datasets: [{
-                            data:[gender2.s,gender2.m,gender2.p,gender2.pe],
+                            data:[q4.s,q4.m,q4.p,q4.pe],
                             
-                            backgroundColor: ["#1639DB", "#ff6384", "#DBA400", "#FF5733"]
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
         
                         }]
                     },
                         options: {
                         title: {
                             display: true,
-                            text: '4. Qual o estado do Brasil que você nasceu?'
+                            text: '4. Qual o estado do Brasil que você nasceu?',
+                            fontSize: 20
                         }
                     }
                 })
         
-                var chartGraph = new Chart(ctx4,{
+                var chartGraph = new Chart(ctx[4],{
                     type: "doughnut",
                     data:{
                         labels: ["Masculino","Feminino","Não sabe responder"],
                         datasets: [{
-                            data:[gender.m,gender.f,gender.ns],
+                            data:[q6.m,q6.f,q6.ns],
                             
-                            backgroundColor: ["#1639DB", "#ff6384", "#DBA400"]
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
         
                         }]
                     },
                         options: {
                         title: {
                             display: true,
-                            text: '6. Qual o seu gênero?'
+                            text: '6. Qual o seu gênero?',
+                            fontSize: 20
                         }
                     }
                 })
 
-                var chartGraph = new Chart(ctx,{
+                var chartGraph = new Chart(ctx[0],{
                     type: "doughnut",
                     data:{
                         labels: ["Análise e Desenvolvimento de Sistemas (ADS)","Gestão de Recursos Humanos (GRH)","Gestão de Produção Industrial (GPI)", "Desenvolvimento de Software Multi Plataforma (DSM)"],
                         datasets: [{
-                            data:[gender1.a,gender1.g,gender1.r,gender1.d],
+                            data:[q1.a,q1.g,q1.r,q1.d],
                             
-                            backgroundColor: ["#1639DB", "#ff6384", "#DBA400", "#FF5733"]
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
         
                         }]
                     },
                         options: {
                         title: {
                             display: true,
-                            text: '1. Qual o seu curso?'
+                            text: '1. Qual o seu curso?',
+                            fontSize: 20
                         }
                     }
                 })
         
-                var chartGraph = new Chart(ctx2,{
+                var chartGraph = new Chart(ctx[1],{
                     type: "doughnut",
                     data:{
                         labels: ["Matutino","Noturno"],
                         datasets: [{
-                            data:[gender3.m,gender3.n],
+                            data:[q2.m,q2.n],
                             
-                            backgroundColor: ["#1639DB", "#ff6384"]
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
         
                         }]
                     },
                         options: {
                         title: {
                             display: true,
-                            text: '2. Qual o período que cursa?'
+                            text: '2. Qual o período que cursa?',
+                            fontSize: 20
                         }
                     }
                 })
 
-                var chartGraph = new Chart(ctx3,{
+                var chartGraph = new Chart(ctx[3],{
                     type: "doughnut",
                     data:{
                         labels: ["Franca","Ipuã","Patrocínio Paulista", "Ribeirão Corrente", "Ribeirão Preto", "S. José da Bela Vista"],
                         datasets: [{
-                            data:[gender4.f,gender4.i,gender4.p,gender4.rc,gender4.rp,gender4.s],
+                            data:[q5.f,q5.i,q5.p,q5.rc,q5.rp,q5.s],
                             
-                            backgroundColor: ["#1639DB", "#ff6384", "#DBA400", "#FF5733", "#B9FF4D", "#79B324"]
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
         
                         }]
                     },
                         options: {
                         title: {
                             display: true,
-                            text: '5. Qual sua cidade de residência?'
+                            text: '5. Qual sua cidade de residência?',
+                            fontSize: 20
                         }
                     }
                 })
         
-                var chartGraph = new Chart(ctx5,{
+                var chartGraph = new Chart(ctx[6],{
                     type: "doughnut",
                     data:{
                         labels: ["Solteiro(a)","Casado(a) ou União Estável","Separado(a), desquitado(a), divorciado(a)"],
                         datasets: [{
-                            data:[gender5.s,gender5.c,gender5.o],
+                            data:[q8.s,q8.c,q8.o],
                             
-                            backgroundColor: ["#1639DB", "#ff6384", "#DBA400"]
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
         
                         }]
                     },
                         options: {
                         title: {
                             display: true,
-                            text: '8. Qual é o seu estado civil?'
+                            text: '8. Qual é o seu estado civil?',
+                            fontSize: 20
                         }
                     }
                 })
                 
 
-                var chartGraph = new Chart(ctx6,{
+                var chartGraph = new Chart(ctx[7],{
                     type: "doughnut",
                     data:{
                         labels: ["Visual","Nenhum"],
                         datasets: [{
-                            data:[gender6.v,gender6.n],
+                            data:[q9.v,q9.n],
                             
-                            backgroundColor: ["#1639DB", "#ff6384"]
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
         
                         }]
                     },
                         options: {
                         title: {
                             display: true,
-                            text: '9. Você é portador de alguma necessidade especial?(Pode selecionar mais de uma, se for o caso)'
+                            text: '9. Você é portador de alguma necessidade especial?(Pode selecionar mais de uma, se for o caso)',
+                            fontSize: 20
                         }
                     }
                 })
 
-                var chartGraph = new Chart(ctx7,{
+                var chartGraph = new Chart(ctx[8],{
                     type: "doughnut",
                     data:{
                         labels: ["Autismo","Auditiva","Síndrome de Down", "Não convivo ou não moro com alguém com deficiência"],
                         datasets: [{
-                            data:[gender7.at, gender7.ad, gender7.s, gender7.n],
+                            data:[q10.at, q10.ad, q10.s, q10.n],
                             
-                            backgroundColor: ["#DBA400", "#FF5733", "#B9FF4D", "#79B324"]
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
         
                         }]
                     },
                         options: {
                         title: {
                             display: true,
-                            text: '10. Você convive ou mora com alguma pessoa com deficiência?'
+                            text: '10. Você convive ou mora com alguma pessoa com deficiência?',
+                            fontSize: 20
                         }
                     }
                 })
 
-                var chartGraph = new Chart(ctx8,{
+                var chartGraph = new Chart(ctx[9],{
                     type: "doughnut",
                     data:{
                         labels: ["Um","Dois","Três", "Nenhum"],
                         datasets: [{
-                            data:[gender8.u, gender8.d, gender8.t, gender8.n],
+                            data:[q11.u, q11.d, q11.t, q11.n],
                             
-                            backgroundColor: ["#DBA400", "#FF5733", "#B9FF4D", "#79B324"]
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
         
                         }]
                     },
                         options: {
                         title: {
                             display: true,
-                            text: '11. Quantos filhos você tem?'
+                            text: '11. Quantos filhos você tem?',
+                            fontSize: 20
                         }
                     }
                 })
 
-                var chartGraph = new Chart(ctx9,{
+                var chartGraph = new Chart(ctx[10],{
                     type: "doughnut",
                     data:{
                         labels: ["Com amigos (compartilhando despesas) ou de favor","Com esposa(o) e(ou) filho(s)","Com pais e(ou) parentes", "Sozinho"],
                         datasets: [{
-                            data:[gender9.a, gender9.e, gender9.p, gender9.s],
+                            data:[q12.a, q12.e, q12.p, q12.s],
                             
-                            backgroundColor: ["#DBA400", "#FF5733", "#B9FF4D", "#79B324"]
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
         
                         }]
                     },
                         options: {
                         title: {
                             display: true,
-                            text: '12. Com quem você mora atualmente?'
+                            text: '12. Com quem você mora atualmente?',
+                            fontSize: 20
                         }
                     }
                 })
 
 
-                var chartGraph = new Chart(ctx10,{
+                var chartGraph = new Chart(ctx[11],{
                     type: "doughnut",
                     data:{
                         labels: ["Uma","Duas","Três", "Quatro", "Cinco", "Seis", "Sete"],
                         datasets: [{
-                            data:[gender10.a, gender10.b, gender10.c, gender10.d, gender10.e, gender10.f, gender10.g],
+                            data:[q13.a, q13.b, q13.c, q13.d, q13.e, q13.f, q13.g],
                             
-                            backgroundColor: ["#DBA400", "#FF5733", "#B9FF4D", "#79B324","#1639DB", "#ff6384", "#dc597d"]
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
         
                         }]
                     },
                         options: {
                         title: {
                             display: true,
-                            text: '13. Quantas pessoas, incluindo você, moram no seu domicílio?'
+                            text: '13. Quantas pessoas, incluindo você, moram no seu domicílio?',
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[5],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Entre 18 e 20 anos","Entre 21 e 25 anos","Entre 26 e 30 anos", "Entre 31 e 50 anos", "Mais que 50 anos"],
+                        datasets: [{
+                            data:[q7["18e20"],q7["21e25"],q7["26e30"],q7["31e50"],q7["m50"],],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: '7.Qual a sua idade?',
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[12],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Próprio","Alugado","Cedido", "Financiado", "Arrendado","Mensalista"],
+                        datasets: [{
+                            data:[q14.p,q14.a,q14.c,q14.f,q14.ar,q14.men,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "14. Qual a situação do domicílio onde mora?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[13],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Entre 1 e 5 anos", "Entre 6 e 10 anos", "Entre 11 e 15 anos", "Entre 16 e 20 anos", "Mais de 20 anos"],
+                        datasets: [{
+                            data:[q15["1e5"],q15["6e10"],q15["11e15"],q15["16e20"],q15["m20"],],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "15. Tempo de moradia neste domicílio (Em anos)?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[14],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Até dois salários minimos", "Mais de dois até cinco salários mínimos", "Mais de cinco até dez salários mínimos", "Mais de dez até vinte salários mínimos", "Mais de vinte salários mínimos", "Prefiro não responder"],
+                        datasets: [{
+                            data:[q16["a2"],q16["m2a5"],q16["m5a10"],q16["m10a20"],q16["m20"],q16["pf"],],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "16. Qual a faixa de renda mensal da sua família (em Salários Mínimos)?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                //questão 17 dividida em 10 perguntas// de a até j
+                var chartGraph = new Chart(ctx[15],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Nenhum(a)","Um","Dois","Três","Quatro","Mais de quatro"],
+                        datasets: [{
+                            data:[q17a.zero,q17a.um,q17a.dois,q17a.tres,q17a.quat,q17a.mquat,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "17.1. Quantas geladeiras há em seu domicílio.",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[16],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Nenhum(a)","Um","Dois","Três","Quatro","Mais de quatro"],
+                        datasets: [{
+                            data:[q17b.zero,q17b.um,q17b.dois,q17b.tres,q17b.quat,q17b.mquat,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "17.2. Quantos celulares comuns há em seu domicílio?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[17],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Nenhum(a)","Um","Dois","Três","Quatro","Mais de quatro"],
+                        datasets: [{
+                            data:[q17c.zero,q17c.um,q17c.dois,q17c.tres,q17c.quat,q17c.mquat,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "17.3. Quantos micro-ondas há em seu domicílio?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[18],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Nenhum(a)","Um","Dois","Três","Quatro","Mais de quatro"],
+                        datasets: [{
+                            data:[q17d.zero,q17d.um,q17d.dois,q17d.tres,q17d.quat,q17d.mquat,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "17.4. Quantos notebooks há em seu domicílio?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[19],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Nenhum(a)","Um","Dois","Três","Quatro","Mais de quatro"],
+                        datasets: [{
+                            data:[q17e.zero,q17e.um,q17e.dois,q17e.tres,q17e.quat,q17e.mquat,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "17.5. Quantas máquinas de lavar roupa e(ou) tanquinho há em seu domicílio?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[20],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Nenhum(a)","Um","Dois","Três","Quatro","Mais de quatro"],
+                        datasets: [{
+                            data:[q17f.zero,q17f.um,q17f.dois,q17f.tres,q17f.quat,q17f.mquat,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "17.6. Quantas motocicletas há em seu domicílio?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[21],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Nenhum(a)","Um","Dois","Três","Quatro","Mais de quatro"],
+                        datasets: [{
+                            data:[q17g.zero,q17g.um,q17g.dois,q17g.tres,q17g.quat,q17g.mquat,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "17.7. Quantos automóveis há em seu domicílio?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[22],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Nenhum(a)","Um","Dois","Três","Quatro","Mais de quatro"],
+                        datasets: [{
+                            data:[q17h.zero,q17h.um,q17h.dois,q17h.tres,q17h.quat,q17h.mquat,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "17.8. Quantos vídeos cassete e(ou) DVD players há em seu domicílio?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[23],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Nenhum(a)","Um","Dois","Três","Quatro","Mais de quatro"],
+                        datasets: [{
+                            data:[q17i.zero,q17i.um,q17i.dois,q17i.tres,q17i.quat,q17i.mquat,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "17.9. Quantos televisores há em seu domicílio?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[24],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Nenhum(a)","Um","Dois","Três","Quatro","Mais de quatro"],
+                        datasets: [{
+                            data:[q17j.zero,q17j.um,q17j.dois,q17j.tres,q17j.quat,q17j.mquat,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "17.10. Quantos smartphones há em seu domicílio?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[25],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Telefone fixo", "Internet", "Tv por assinatura", "Empregada mensalista", "Nenhuma das opções"],
+                        datasets: [{
+                            data:[q18.tel,q18.inte,q18.tv,q18.emp,q18.na,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "18. No seu domicílio tem?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                //questão 19 contém 4 perguntas
+                var chartGraph = new Chart(ctx[26],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Sim","Não"],
+                        datasets: [{
+                            data:[q19a.s, q19a.n],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "19.1. Você trabalha?",
+                            fontSize: 20
                         }
                     }
                 })
                 
+                var chartGraph = new Chart(ctx[27],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Não trabalho","Sou registrado em indústria (calçados/confecções/outras)","Sou registrado no comércio","Sou registrado em empresa prestadora de serviços","Sou registrado em empresa pública (federal/estadual/municipal)","Sou autônomo","Sou empresário","Sou estagiário",],
+                        datasets: [{
+                            data:[q19b.nt, q19b.sri,q19b.src, q19b.sre,q19b.sep, q19b.sat,q19b.semp, q19b.sest,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "19.2. Qual o seu vínculo com o emprego?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[28],{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Não trabalho","Trabalho na área do curso","Trabalho fora da área do curso"],
+                        datasets: [{
+                            data:[q19c.nt, q19c.tac, q19c.tfc],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "19.3. Qual a área do seu trabalho?",
+                            fontSize: 20
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[29],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Não trabalho', 'Manhã', 'Tarde', 'Noite',' Manhã e tarde', 'Manhã e noite', 'Tarde e noite', 'Regime de turnos'],
+                        datasets: [{
+                            data:[q19d.nt,q19d.m,q19d.t,q19d.n,q19d.mt,q19d.mn,q19d.tn,q19d.regt,],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "19.4. Qual seu horário de trabalho?",
+                            fontSize: 20
+                        }
+                    }
+                })
                 
+            }
+            
         })
     </script>      
 </body>
