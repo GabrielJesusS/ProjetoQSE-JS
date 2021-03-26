@@ -157,6 +157,45 @@
                 c:0,
                 o:0
             }
+
+            let gender6 ={//Possir deficiencia
+                n:0,
+                v:0
+            }
+
+            let gender7 ={//Conviver Deficiencia
+                ad:0,
+                at:0,
+                s:0,
+                n:0
+
+            }
+
+            let gender8 ={//Quantidade de filhos
+                n:0,
+                u:0,
+                d:0,
+                t:0
+            }
+
+            let gender9 ={//Com quem voce vive
+                a:0,
+                e:0,
+                p:0,
+                s:0
+            }
+
+            let gender10 ={//Quantas pessoas na sua casa
+                a:0,
+                b:0,
+                c:0,
+                d:0,
+                e:0,
+                f:0,
+                g:0
+            }
+
+           
     
             for(let i = 0; i < datas.length; i++){
         
@@ -237,6 +276,75 @@
                 gender5.o++
             }
             } 
+
+            for(let i = 0; i < datas.length; i++){
+        
+            if(datas[i]["9. Você é portador de alguma necessidade especial?(Pode selecionar mais de uma, se for o caso)"] === "Visual"){
+                gender6.v++
+            }else {
+                gender6.n++
+            }
+            } 
+
+            for(let i = 0; i < datas.length; i++){
+            
+            if(datas[i]["10. Você convive ou mora com alguma pessoa com deficiência?"] === "Autismo"){
+                gender7.at++
+            }else if(datas[i]["10. Você convive ou mora com alguma pessoa com deficiência?"] === "Auditiva"){
+                gender7.ad++
+            }else if(datas[i]["10. Você convive ou mora com alguma pessoa com deficiência?"] === "Síndrome de Down"){
+                gender7.s++
+            }else{
+                gender7.n++
+            }
+            } 
+
+            for(let i = 0; i < datas.length; i++){
+            
+            if(datas[i]["11. Quantos filhos você tem?"] === "Um"){
+                gender8.u++
+            }else if(datas[i]["11. Quantos filhos você tem?"] === "Dois"){
+                gender8.d++
+            }else if(datas[i]["11. Quantos filhos você tem?"] === "Três"){
+                gender8.t++
+            }else{
+                gender8.n++
+            }
+            } 
+
+            for(let i = 0; i < datas.length; i++){
+            
+            if(datas[i]["12. Com quem você mora atualmente?"] === "Com amigos (compartilhando despesas) ou de favor"){
+                gender9.a++
+            }else if(datas[i]["12. Com quem você mora atualmente?"] === "Com esposa(o) e(ou) filho(s)"){
+                gender9.e++
+            }else if(datas[i]["12. Com quem você mora atualmente?"] === "Com pais e(ou) parentes"){
+                gender9.p++
+            }else{
+                gender9.s++
+            }
+            } 
+
+            for(let i = 0; i < datas.length; i++){
+            
+            if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 1){
+                gender10.a++
+            }else if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 2){
+                gender10.b++
+            }else if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 3){
+                gender10.c++
+            }else if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 4){
+                gender10.d++
+            }else if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 5){
+                gender10.e++
+            }else if(datas[i]["13. Quantas pessoas, incluindo você, moram no seu domicílio?"] === 6){
+                gender10.f++
+            }else{
+                gender10.g++
+            }
+            }
+
+            
         
         
                 var ctx = document.getElementById("nchart1")
@@ -245,8 +353,14 @@
                 var ctx3 = document.getElementById("nchart4")
                 var ctx4 = document.getElementById("nchart5")
                 var ctx5 = document.getElementById("nchart6")
+                var ctx6 = document.getElementById("nchart7")
+                var ctx7 = document.getElementById("nchart8")
+                var ctx8 = document.getElementById("nchart9")
+                var ctx9 = document.getElementById("nchart10")
+                var ctx10 = document.getElementById("nchart11")
+
         
-                var chartGraph = new Chart(ctx2,{
+                var chartGraph = new Chart(ctx1,{
                     type: "doughnut",
                     data:{
                         labels: ["SP","MG","PR", "PE"],
@@ -265,7 +379,7 @@
                     }
                 })
         
-                var chartGraph = new Chart(ctx,{
+                var chartGraph = new Chart(ctx4,{
                     type: "doughnut",
                     data:{
                         labels: ["Masculino","Feminino","Não sabe responder"],
@@ -284,7 +398,7 @@
                     }
                 })
 
-                var chartGraph = new Chart(ctx1,{
+                var chartGraph = new Chart(ctx,{
                     type: "doughnut",
                     data:{
                         labels: ["Análise e Desenvolvimento de Sistemas (ADS)","Gestão de Recursos Humanos (GRH)","Gestão de Produção Industrial (GPI)", "Desenvolvimento de Software Multi Plataforma (DSM)"],
@@ -303,7 +417,7 @@
                     }
                 })
         
-                var chartGraph = new Chart(ctx3,{
+                var chartGraph = new Chart(ctx2,{
                     type: "doughnut",
                     data:{
                         labels: ["Matutino","Noturno"],
@@ -322,7 +436,7 @@
                     }
                 })
 
-                var chartGraph = new Chart(ctx4,{
+                var chartGraph = new Chart(ctx3,{
                     type: "doughnut",
                     data:{
                         labels: ["Franca","Ipuã","Patrocínio Paulista", "Ribeirão Corrente", "Ribeirão Preto", "S. José da Bela Vista"],
@@ -360,6 +474,102 @@
                     }
                 })
                 
+
+                var chartGraph = new Chart(ctx6,{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Visual","Nenhum"],
+                        datasets: [{
+                            data:[gender6.v,gender6.n],
+                            
+                            backgroundColor: ["#1639DB", "#ff6384"]
+        
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: '9. Você é portador de alguma necessidade especial?(Pode selecionar mais de uma, se for o caso)'
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx7,{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Autismo","Auditiva","Síndrome de Down", "Não convivo ou não moro com alguém com deficiência"],
+                        datasets: [{
+                            data:[gender7.at, gender7.ad, gender7.s, gender7.n],
+                            
+                            backgroundColor: ["#DBA400", "#FF5733", "#B9FF4D", "#79B324"]
+        
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: '10. Você convive ou mora com alguma pessoa com deficiência?'
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx8,{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Um","Dois","Três", "Nenhum"],
+                        datasets: [{
+                            data:[gender8.u, gender8.d, gender8.t, gender8.n],
+                            
+                            backgroundColor: ["#DBA400", "#FF5733", "#B9FF4D", "#79B324"]
+        
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: '11. Quantos filhos você tem?'
+                        }
+                    }
+                })
+
+                var chartGraph = new Chart(ctx9,{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Com amigos (compartilhando despesas) ou de favor","Com esposa(o) e(ou) filho(s)","Com pais e(ou) parentes", "Sozinho"],
+                        datasets: [{
+                            data:[gender9.a, gender9.e, gender9.p, gender9.s],
+                            
+                            backgroundColor: ["#DBA400", "#FF5733", "#B9FF4D", "#79B324"]
+        
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: '12. Com quem você mora atualmente?'
+                        }
+                    }
+                })
+
+
+                var chartGraph = new Chart(ctx10,{
+                    type: "doughnut",
+                    data:{
+                        labels: ["Uma","Duas","Três", "Quatro", "Cinco", "Seis", "Sete"],
+                        datasets: [{
+                            data:[gender10.a, gender10.b, gender10.c, gender10.d, gender10.e, gender10.f, gender10.g],
+                            
+                            backgroundColor: ["#DBA400", "#FF5733", "#B9FF4D", "#79B324","#1639DB", "#ff6384", "#dc597d"]
+        
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: '13. Quantas pessoas, incluindo você, moram no seu domicílio?'
+                        }
+                    }
+                })
                 
                 
         })
