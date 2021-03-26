@@ -408,7 +408,7 @@ let comunic = [
     "Revistas", 
     "Jornais", 
     "Rádio", 
-    "Redes sociais", 
+    "Redes socias", 
     "Conversas com Amigos"
 ]
 
