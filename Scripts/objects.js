@@ -462,4 +462,146 @@ let q27 = [
         m:0, //muito
         s:0 //sempre
     }
+
+    
 ]
+
+let q28 = {
+    as:0, //Algumas vezes por semana
+    d:0, //Diariamente
+    nl:0, // Não leio
+    r:0, //Raramente
+    sd:0 //Somente aos domingos
+}
+
+
+let q29 = {
+	nl:0,	//Não leio jormal
+	ta:0,	//Todos os assuntos
+	nt:0,	//Notícias locais
+	nn:0,	//Notícias nacionais
+	ni:0,	//Notícias internacionais
+	es:0,	//Esporte
+	lac:0,	//Lazer, arte e cultura
+	np:0,	//Notícias policiais
+	cl:0,	//Classificados
+	md:0,	//Moda
+	sc:0	//Sociais
+}
+
+
+let q30 = {
+    a2:0, //Até 2
+    a36:0, //De 3 até 6
+    a71:0, // De 7 até 10
+    a10:0, //Mais de 10
+    n:0 //Nenhum
+}
+
+
+let q31 = {
+    nl:0, //Não leio
+    r:0, //Romance
+    f:0, //Ficção
+    p:0, //Policial
+    b:0, //Biográfico
+	a:0, //Aventura
+    aa:0, //Autoajuda
+    o:0 //Outros
+}
+
+
+let q32 = {
+    n:0, //Não
+    s:0 //Sim
+}
+
+
+let q33 = {
+    c:0, //Católica
+    ep:0, //Espírita
+    ev:0, // Evangélica
+    n:0, //Nenhuma
+    o:0 //Outra
+}
+
+let q34 ={
+    C:0,	//Cinema
+    E:0,	//Exposições de arte
+    F:0,	//Filmes na internet
+    L:0,	//Literatura
+    MEU:0,	//Museus
+    MIC:0,	//Música
+    T:0,	//Teatro
+    TV:0,	//TV
+    V:0,	//Viagens
+    N:0	//Nenhuma
+}
+
+let q35 ={
+    C:0,	//Cartaz de divulgação
+    I:0,	//Indicação de familiar/amigo
+    F:0,	//Pelo Facebook
+    J:0,	//Por algum dos jormais
+    R:0,	//Por alguma das rádios
+    O:0,	//Por outdoor
+    E:0	//Propaganda na escola que estudava
+}
+
+let q36 ={
+    A:0,	//Este curso forma profissionais facilmente absorvidos pelo mercado
+    R:0,	//Este curso forma profissionais que são bem remunerados
+    M:0,	//Minha vocação é seguir esta carreira
+    G:0,	//Este curso é gratuito
+    D:0,	//Este curso é de média duração
+    C:0,	//É um curso bem conceituado na região
+    T:0,	//Porque já trabalho na área
+    S:0,	//Sugestão ou vontade familiar
+    O:0	//Outros motivos
+}
+
+
+let q37 ={
+    C:0,	//Obter novos conhecimentos
+    E:0,	//Obter competências para exercício de uma profissão
+    N:0,	//Conhecer novas pessoas
+    M:0,	//Melhorar-me como pessoa para bons relacionamentos futuros
+    D:0,	//Obter um diploma de nível superior
+    C:0,	//Outra expectativa
+    A:0	    //Não tenho expectativa alguma
+}
+
+let q38 ={
+	C:0,	//Conquistar vaga em empresa privada
+	P:0,	//Prestar concurso público
+	M:0,	//Melhorar cargo e salário na empresa que trabalho
+	A:0,	//Abrir meu próprio negócio
+	I:0,	//Ingressar na carreira acadêmica
+	O:0,	//Outra expectativa
+	N:0		//Nenhuma expectativa
+}
+
+let q39 ={
+    n:0,//Não
+    s:0//Sim
+}
+
+let q40 ={
+   n:0,//Não fiz
+   so:0,//Sim em outra instituição 
+   se:0,//Sim na Etec
+   ss:0,//Sim no Senac
+   ssn:0//Sim no Senai
+
+}
+
+let q41={
+   b: 0,//Bicicleta
+   c: 0,//Caminhando
+   cn:0,//Carona
+   cr:0,//Carro
+   mt:0,//Moto
+   o:0,//Ônibus
+   t:0//Transporte escolar
+
+}

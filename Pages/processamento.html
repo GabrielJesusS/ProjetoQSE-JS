@@ -727,6 +727,276 @@
                 }
 
             }
+
+
+
+            if(datas[i]["28. Se você lê jornal, qual a frequência?"] == 'Algumas vezes por semana'){
+                q28.as++
+            }else if(datas[i]["28. Se você lê jornal, qual a frequência?"] == 'Diariamente'){
+                q28.d++
+            }else if(datas[i]["28. Se você lê jornal, qual a frequência?"] == 'Não leio'){
+                q28.nl++
+            }else if(datas[i]["28. Se você lê jornal, qual a frequência?"] == 'Raramente'){
+                q28.r++
+            }else {
+                q28.sd++
+            }
+
+            if(datas[i]["29. Se você lê jornal, quais os assuntos que mais lê?"].indexOf("Não leio") > -1){
+                q29.nl++
+            }
+            if(datas[i]["29. Se você lê jornal, quais os assuntos que mais lê?"].indexOf("Todos") > -1){
+                q29.ta++
+            }
+            if(datas[i]["29. Se você lê jornal, quais os assuntos que mais lê?"].indexOf("Notícias locais") > -1){
+                q29.nt++
+            }
+            if(datas[i]["29. Se você lê jornal, quais os assuntos que mais lê?"].indexOf("Notícias nacionais") > -1){
+                q29.nn++
+            }
+            if(datas[i]["29. Se você lê jornal, quais os assuntos que mais lê?"].indexOf("Notícias internacionais") > -1){
+                q29.ni++
+            }
+            if(datas[i]["29. Se você lê jornal, quais os assuntos que mais lê?"].indexOf("Esporte") > -1){
+                q29.es++
+            }
+			if(datas[i]["29. Se você lê jornal, quais os assuntos que mais lê?"].indexOf("Lazer, arte e cultura") > -1){
+                q29.lac++
+            }
+			if(datas[i]["29. Se você lê jornal, quais os assuntos que mais lê?"].indexOf("Notícias policiais") > -1){
+                q29.np++
+            }
+			if(datas[i]["29. Se você lê jornal, quais os assuntos que mais lê?"].indexOf("Classificados") > -1){
+                q29.cl++
+            }
+			if(datas[i]["29. Se você lê jornal, quais os assuntos que mais lê?"].indexOf("Moda") > -1){
+                q29.md++
+            }
+			if(datas[i]["29. Se você lê jornal, quais os assuntos que mais lê?"].indexOf("Sociais") > -1){
+                q29.sc++
+            }
+			
+
+            if(datas[i]["30. Não considerando os livros escolares, quantos livros você lê por ano (em média)?"] == 'Até 2'){
+                q30.a2++
+            }else if(datas[i]["30. Não considerando os livros escolares, quantos livros você lê por ano (em média)?"] == 'De 3 até 6'){
+                q30.a36++
+            }else if(datas[i]["30. Não considerando os livros escolares, quantos livros você lê por ano (em média)?"] == 'De 7 até 10'){
+                q30.a71++
+            }else if(datas[i]["30. Não considerando os livros escolares, quantos livros você lê por ano (em média)?"] == 'Mais de 10'){
+                q30.a10++
+            }else {
+                q30.n++
+            }
+
+			if(datas[i]["31. Se você lê livros literários, qual/quais o(s) gênero(s) preferido(s)?"].indexOf("Não") > -1){
+                q31.nl++
+            }
+            if(datas[i]["31. Se você lê livros literários, qual/quais o(s) gênero(s) preferido(s)?"].indexOf("Romance") > -1){
+                q31.r++
+            }
+            if(datas[i]["31. Se você lê livros literários, qual/quais o(s) gênero(s) preferido(s)?"].indexOf("Ficção") > -1){
+                q31.f++
+            }
+            if(datas[i]["31. Se você lê livros literários, qual/quais o(s) gênero(s) preferido(s)?"].indexOf("Policial") > -1){
+                q31.p++
+            }
+            if(datas[i]["31. Se você lê livros literários, qual/quais o(s) gênero(s) preferido(s)?"].indexOf("Biográfico") > -1){
+                q31.b++
+            }
+            if(datas[i]["31. Se você lê livros literários, qual/quais o(s) gênero(s) preferido(s)?"].indexOf("Aventura") > -1){
+                q31.a++
+            }
+			if(datas[i]["31. Se você lê livros literários, qual/quais o(s) gênero(s) preferido(s)?"].indexOf("Autoajuda") > -1){
+                q31.aa++
+            }
+			if(datas[i]["31. Se você lê livros literários, qual/quais o(s) gênero(s) preferido(s)?"].indexOf("Outros") > -1){
+                q31.o++
+            }
+
+            if(datas[i]["32. Você dedica parte do seu tempo para atividades voluntárias?"] == 'Não'){
+                q32.n++
+            }else {
+                q32.s++
+            }
+
+            if(datas[i]["33. Qual religião você professa?"] == 'Católica'){
+                q33.c++
+            }else if(datas[i]["33. Qual religião você professa?"] == 'Espírita'){
+                q33.ep++
+            }else if(datas[i]["33. Qual religião você professa?"] == 'Evangélica'){
+                q33.ev++
+            }else if(datas[i]["33. Qual religião você professa?"] == 'Nenhuma'){
+                q33.n++
+            }else {
+                q33.o++
+            }
+
+            if(datas[i]["34. Quais fontes de entretenimento cultural você usa?"].indexOf("Cinema") > -1){
+                q34.C++
+            }
+            if(datas[i]["34. Quais fontes de entretenimento cultural você usa?"].indexOf("Exposições") > -1){
+                q34.E++
+            }
+            if(datas[i]["34. Quais fontes de entretenimento cultural você usa?"].indexOf("Filmes") > -1){
+                q34.F++
+            }
+            if(datas[i]["34. Quais fontes de entretenimento cultural você usa?"].indexOf("Literatura") > -1){
+                q34.L++
+            }
+            if(datas[i]["34. Quais fontes de entretenimento cultural você usa?"].indexOf("Museus") > -1){
+                q34.MEU++
+            }
+            if(datas[i]["34. Quais fontes de entretenimento cultural você usa?"].indexOf("Música") > -1){
+                q34.MIC++
+            }
+			if(datas[i]["34. Quais fontes de entretenimento cultural você usa?"].indexOf("Teatro") > -1){
+                q34.T++
+            }
+			if(datas[i]["34. Quais fontes de entretenimento cultural você usa?"].indexOf("TV") > -1){
+                q34.TV++
+            }
+			if(datas[i]["34. Quais fontes de entretenimento cultural você usa?"].indexOf("Viagens") > -1){
+                q34.V++
+            }
+			if(datas[i]["34. Quais fontes de entretenimento cultural você usa?"].indexOf("Nenhuma") > -1){
+                q34.N++
+            }
+			
+
+            if(datas[i]["35. Estamos quase acabando... Como conheceu a FATEC Franca?"].indexOf("divulgação") > -1){
+                q35.C++
+            }
+            if(datas[i]["35. Estamos quase acabando... Como conheceu a FATEC Franca?"].indexOf("familiar/amigo") > -1){
+                q35.I++
+            }
+            if(datas[i]["35. Estamos quase acabando... Como conheceu a FATEC Franca?"].indexOf("Facebook") > -1){
+                q35.F++
+            }
+            if(datas[i]["35. Estamos quase acabando... Como conheceu a FATEC Franca?"].indexOf("jornais") > -1){
+                q35.J++
+            }
+            if(datas[i]["35. Estamos quase acabando... Como conheceu a FATEC Franca?"].indexOf("rádios") > -1){
+                q35.R++
+            }
+            if(datas[i]["35. Estamos quase acabando... Como conheceu a FATEC Franca?"].indexOf("outdoor") > -1){
+                q35.O++
+            }
+			if(datas[i]["35. Estamos quase acabando... Como conheceu a FATEC Franca?"].indexOf("estudava") > -1){
+                q35.E++
+            }
+
+
+            if(datas[i]["36. Porque você escolheu este curso?"].indexOf("absorvidos") > -1){
+                q36.A++
+            }
+            if(datas[i]["36. Porque você escolheu este curso?"].indexOf("remunerados") > -1){
+                q36.R++
+            }
+            if(datas[i]["36. Porque você escolheu este curso?"].indexOf("carreira") > -1){
+                q36.M++
+            }
+            if(datas[i]["36. Porque você escolheu este curso?"].indexOf("gratuito") > -1){
+                q36.G++
+            }
+            if(datas[i]["36. Porque você escolheu este curso?"].indexOf("duração") > -1){
+                q36.D++
+            }
+            if(datas[i]["36. Porque você escolheu este curso?"].indexOf("conceituado") > -1){
+                q36.C++
+            }
+			if(datas[i]["36. Porque você escolheu este curso?"].indexOf("trabalho") > -1){
+                q36.T++
+            }
+			if(datas[i]["36. Porque você escolheu este curso?"].indexOf("Sugestão") > -1){
+                q36.S++
+            }
+			if(datas[i]["36. Porque você escolheu este curso?"].indexOf("Outros motivos") > -1){
+                q36.O++
+            }
+
+
+
+            if(datas[i]["37. Qual sua maior expectativa quanto ao curso?"].indexOf("conhecimentos") > -1){
+                q37.C++
+            }
+            if(datas[i]["37. Qual sua maior expectativa quanto ao curso?"].indexOf("competências") > -1){
+                q37.E++
+            }
+            if(datas[i]["37. Qual sua maior expectativa quanto ao curso?"].indexOf("Conhecer") > -1){
+                q37.N++
+            }
+            if(datas[i]["37. Qual sua maior expectativa quanto ao curso?"].indexOf("Melhorar-me") > -1){
+                q37.M++
+            }
+            if(datas[i]["37. Qual sua maior expectativa quanto ao curso?"].indexOf("diploma") > -1){
+                q37.D++
+            }
+            if(datas[i]["37. Qual sua maior expectativa quanto ao curso?"].indexOf("Outra expectativa") > -1){
+                q37.C++
+            }
+			if(datas[i]["37. Qual sua maior expectativa quanto ao curso?"].indexOf("tenho expectativa") > -1){
+                q37.A++
+            }
+
+            if(datas[i]["38. Qual sua expectativa após se formar?"].indexOf("Conquistar") > -1){
+                q38.C++
+            }
+            if(datas[i]["38. Qual sua expectativa após se formar?"].indexOf("Prestar") > -1){
+                q38.P++
+            }
+            if(datas[i]["38. Qual sua expectativa após se formar?"].indexOf("Melhorar") > -1){
+                q38.M++
+            }
+            if(datas[i]["38. Qual sua expectativa após se formar?"].indexOf("Abrir") > -1){
+                q38.A++
+            }
+            if(datas[i]["38. Qual sua expectativa após se formar?"].indexOf("Ingressar") > -1){
+                q38.I++
+            }
+            if(datas[i]["38. Qual sua expectativa após se formar?"].indexOf("Outra") > -1){
+                q38.O++
+            }
+			if(datas[i]["38. Qual sua expectativa após se formar?"].indexOf("Nenhuma") > -1){
+                q38.N++
+            }
+
+            if(datas[i]["39. Você já estudou nesta escola?"] == 'Não'){
+                q39.n++
+            }else {//Sim
+                q39.s++
+            }
+
+            if(datas[i]["40. Você fez algum curso técnico?"] == 'Não fiz'){
+                q40.n++
+            }else if(datas[i]["40. Você fez algum curso técnico?"] == 'Sim, em outra instituição'){
+                q40.so++
+            }else if(datas[i]["40. Você fez algum curso técnico?"] == 'Sim, em uma ETEC'){
+                q40.se++
+            }else if(datas[i]["40. Você fez algum curso técnico?"] == 'Sim, no SENAC'){
+                q40.ss++
+            }else {//Sim, no SENAI
+                q40.ssn++
+            }
+
+            if(datas[i]["41. Qual o meio de transporte você usa para vir à escola?"] == 'Bicicleta'){
+                q41.b++
+            }else if(datas[i]["41. Qual o meio de transporte você usa para vir à escola?"] == 'Caminhando'){
+                q41.c++
+            }else if(datas[i]["41. Qual o meio de transporte você usa para vir à escola?"] == 'Carona'){
+                q41.cn++
+            }else if(datas[i]["41. Qual o meio de transporte você usa para vir à escola?"] == 'Carro'){
+                q41.cr++
+            }else if(datas[i]["41. Qual o meio de transporte você usa para vir à escola?"] == 'Moto'){
+                q41.mt++
+            }else if(datas[i]["41. Qual o meio de transporte você usa para vir à escola?"] == 'Ônibus'){
+                q41.o++
+            }else {//Transporte escolar
+                q41.t++
+            }
+            
+
+
         }
         
         //fim das contagens
@@ -1581,6 +1851,315 @@
                         }
                     })
                 }
+
+
+                var chartGraph = new Chart(ctx[54],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Algumas vezes por semana', 'Diariamente', 'Não leio', 'Raramente', 'Somente aos domingos'],
+                        datasets: [{
+                            data:[q28.as, q28.d, q28.nl, q28.r, q28.sd],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "28. Se você lê jornal, qual a frequência?",
+                            fontSize: 20
+                        },
+                        
+                    }
+                })
+
+                var chartGraph = new Chart(ctx[55],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Não leio jormal', 'Todos os assuntos', 'Notícias locais', 'Notícias nacionais', 'Notícias internacionais', 'Esporte', 'Lazer, arte e cultura', 'Notícias policiais', 'Classificados', 'Moda', 'Sociais'],
+                        datasets: [{
+                            data:[q29.nl,q29.ta,q29.nt,q29.nn,q29.ni,q29.es,q29.lac,q29.np,q29.cl,q29.md,q29.sc],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "29. Se você lê jornal, quais os assuntos que mais lê?",
+                            fontSize: 20
+                        },
+                        
+                    }
+                })
+
+
+                var chartGraph = new Chart(ctx[56],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Até 2', 'De 3 até 6', 'De 7 até 10', 'Mais de 10', 'Nenhum'],
+                        datasets: [{
+                            data:[q30.a2, q30.a36, q30.a71, q30.a10, q30.n],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "30. Não considerando os livros escolares, quantos livros você lê por ano (em média)?",
+                            fontSize: 20
+                        },
+                        
+                    }
+                })
+
+
+                var chartGraph = new Chart(ctx[57],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Não leio', 'Romance', 'Ficção', 'Policial', 'Biográfico', 'Aventura', 'Autoajuda', 'Outros'],
+                        datasets: [{
+                            data:[q31.nl, q31.r, q31.f, q31.p, q31.b, q31.a, q31.aa, q31.o],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "31. Se você lê livros literários, qual/quais o(s) gênero(s) preferido(s)?",
+                            fontSize: 20
+                        },
+                        
+                    }
+                })
+
+
+                var chartGraph = new Chart(ctx[58],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Não', 'Sim'],
+                        datasets: [{
+                            data:[q32.n,q32.s],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "32. Você dedica parte do seu tempo para atividades voluntárias?",
+                            fontSize: 20
+                        },
+                        
+                    }
+                })
+
+
+
+                var chartGraph = new Chart(ctx[59],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Católica', 'Espírita', 'Evangélica', 'Nenhuma', 'Outra'],
+                        datasets: [{
+                            data:[q33.c, q33.ep, q33.ev, q33.n, q33.o],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "33. Qual religião você professa?",
+                            fontSize: 20
+                        },
+                        
+                    }
+                })
+
+
+                var chartGraph = new Chart(ctx[60],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Cinema', 'Exposições de arte', 'Filmes na internet', 'Literatura', 'Museus', 'Música', 'Teatro', 'TV', 'Viagens', 'Nenhuma'],
+                        datasets: [{
+                            data:[q34.C, q34.E, q34.F, q34.L, q34.MEU, q34.MIC, q34.T, q34.TV, q34.V, q34.N ],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "34. Quais fontes de entretenimento cultural você usa?",
+                            fontSize: 20
+                        },
+                        
+                    }
+                })
+
+
+                var chartGraph = new Chart(ctx[61],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Cartaz de divulgação', 'Indicação de familiar/amigo', 'Pelo Facebook', 'Por algum dos jornais', 'Por alguma das rádios', 'Por outdoor', 'Propaganda na escola que estudava'],
+                        datasets: [{
+                            data:[q35.C,q35.I,q35.F,q35.J,q35.R,q35.O,q35.E],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "35. Estamos quase acabando... Como conheceu a FATEC Franca?",
+                            fontSize: 20
+                        },
+                        
+                    }
+                })
+
+
+                var chartGraph = new Chart(ctx[62],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Este curso forma profissionais facilmente absorvidos pelo mercado', 'Este curso forma profissionais que são bem remunerados', 'Minha vocação é seguir esta carreira', 'Este curso é gratuito', 'Este curso é de média duração', 'É um curso bem conceituado na região', 'Porque já trabalho na área', 'Sugestão ou vontade familiar', 'Outros motivos'],
+                        datasets: [{
+                            data:[q36.A,q36.R,q36.M,q36.G,q36.D,q36.C,q36.T,q36.S,q36.O],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "36. Porque você escolheu este curso?",
+                            fontSize: 20
+                        },
+                        
+                    }
+                })
+
+
+                var chartGraph = new Chart(ctx[63],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Obter novos conhecimentos', 'Obter competências para exercício de uma profissão', 'Conhecer novas pessoas', 'Melhorar-me como pessoa para bons relacionamentos futuros', 'Obter um diploma de nível superior', 'Outra expectativa', 'Não tenho expectativa alguma'],
+                        datasets: [{
+                            data:[q37.C,q37.E,q37.N,q37.M,q37.D,q37.C,q37.A],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "37. Qual sua maior expectativa quanto ao curso?",
+                            fontSize: 20
+                        },
+                        
+                    }
+                })
+
+
+
+                var chartGraph = new Chart(ctx[64],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Conquistar vaga em empresa privada', 'Prestar concurso público', 'Melhorar cargo e salário na empresa que trabalho', 'Abrir meu próprio negócio', 'Ingressar na carreira acadêmica', 'Outra expectativa', 'Nenhuma expectativa'],
+                        datasets: [{
+                            data:[q38.C,q38.P,q38.M,q38.A,q38.I,q38.O, q38.N],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "38. Qual sua expectativa após se formar?",
+                            fontSize: 20
+                        },
+                        
+                    }
+                })
+
+
+                var chartGraph = new Chart(ctx[65],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Sim', 'Não'],
+                        datasets: [{
+                            data:[q39.s,q39.n],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "39. Você já estudou nesta escola?",
+                            fontSize: 20
+                        },
+                        
+                    }
+                })
+
+
+                var chartGraph = new Chart(ctx[66],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Não fiz', 'Sim, em outra instituição', 'Sim, em uma ETEC', 'Sim, no SENAC', 'Sim, no SENAI'],
+                        datasets: [{
+                            data:[q40.n, q40.so, q40.se, q40.ss, q40.ssn],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "40. Você fez algum curso técnico?",
+                            fontSize: 20
+                        },
+                        
+                    }
+                })
+
+
+                var chartGraph = new Chart(ctx[67],{
+                    type: "doughnut",
+                    data:{
+                        labels: ['Bicicleta', 'Caminhando', 'Carona', 'Carro', 'Moto', 'Ônibus', 'Transporte escolar' ],
+                        datasets: [{
+                            data:[q41.b,q41.c,q41.cn,q41.cr,q41.mt,q41.o,q41.t],
+                            
+                            backgroundColor: ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+                            
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: "41. Qual o meio de transporte você usa para vir à escola?",
+                            fontSize: 20
+                        },
+                        
+                    }
+                })
                 
                 
             }
