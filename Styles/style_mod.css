@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+
+html{
+    height: 100%;
+}
 body{
     color: black;
     font-family: Arial, Helvetica, sans-serif;
@@ -35,7 +39,7 @@ header{
 
 #project{
     
-    padding-left: 500px;
+    
     margin: 0 auto;
     padding-top: 27px;
     
@@ -53,6 +57,10 @@ header{
     border: none;
 }
 
+#logo{
+    width: 100%;
+}
+
 /*fim css cabeçalho*/
 
 #pgProc{
@@ -62,6 +70,7 @@ header{
 }
 
 #content{
+    padding: 5vw;
     display: flex;
     padding: 30px 15px 30px 15px;
     justify-content: center;
@@ -70,8 +79,11 @@ header{
 }
 
 #explain{
+    position: relative;
+    justify-content: space-between;
     padding: 20px;
     display: flex;
+    flex-wrap: wrap;
 }
 
 #explain p{
@@ -80,6 +92,7 @@ header{
 }
 
 #explain2{
+    margin: 0 auto;
     text-align: center;
     
 }
@@ -101,6 +114,10 @@ header{
     color: black; 
 }
 
+#helo{
+    position: relative;
+}
+
 #grf{
     padding-left: 40px;
     display: flex;
@@ -109,6 +126,7 @@ header{
 }
 
 iframe{
+    
     margin-top: 20px;
     margin-left:  70px;
 }
