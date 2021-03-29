@@ -1,0 +1,84 @@
+body{
+    overflow-x: hidden;
+}
+
+.alertBox{
+    position: absolute;
+    right: 0;
+    background-image: linear-gradient(to right, #004EF2, #0B85DB);
+    font-size: 20px;
+    bottom: 10px;
+    padding: 15px 40px 15px 15px;
+    min-width: 350px;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.alertBox.show ::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: #80DCFF;
+    width: 100%;
+    box-sizing:border-box;
+    z-index: 11;
+    animation: hider 5s linear ;
+}
+
+.alertBox.hide.hidden{
+    visibility: hidden;
+}
+
+@keyframes hider{
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 0%;
+    }
+}
+
+.alertBox.show {
+    animation: showAlert 1s ease forwards;
+}
+
+@keyframes showAlert {
+    0%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    40%{
+        transform: translateX(-15%);
+    }
+    80%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-10px);
+    }
+    
+}
+
+.alertBox.hide {
+    animation: hideAlert 1s ease forwards;
+}
+
+@keyframes hideAlert {
+    0%{
+        transform: translateX(-10px);
+    }
+    40%{
+        transform: translateX(0%);
+    }
+    80%{
+        transform: translateX(-15%);
+    }
+    100%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    
+}

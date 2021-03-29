@@ -37,7 +37,7 @@ header{
     padding-top: 20px;
 }
 
-#project{
+.project{
     
     
     margin: 0 auto;
@@ -46,13 +46,13 @@ header{
     
 }
 
-#project a{
+.project a{
     color: white ;
     text-decoration: none;
     font-size: 20px;
 }
 
-#project button{    
+.project button{    
     background: none;
     border: none;
 }

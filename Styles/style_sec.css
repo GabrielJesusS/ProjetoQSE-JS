@@ -34,6 +34,9 @@
    
 }
 
+#process{
+    background-image: linear-gradient(to right, #494949 , #6a6a6a);
+}
 
 .chartsjs{
     display: block;
