@@ -7,7 +7,7 @@ body{
     right: 0;
     background-image: linear-gradient(to right, #004EF2, #0B85DB);
     font-size: 20px;
-    bottom: 10px;
+    bottom: 5%;
     padding: 15px 40px 15px 15px;
     min-width: 350px;
     color: white;
@@ -21,7 +21,7 @@ body{
     left: 0;
     bottom: 0;
     height: 4px;
-    background-color: #80DCFF;
+    background-color: rgba(235, 235, 235, 0.658);
     width: 100%;
     box-sizing:border-box;
     z-index: 11;

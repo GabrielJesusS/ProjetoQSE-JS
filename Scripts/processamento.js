@@ -7,8 +7,9 @@
             sFile = event.target.files[0];
             //console.log(event.target.files);
             //console.log(sFile.name)
+            sFileType = sFile.name.split('.').pop();
 
-            if(sFile){
+            if(sFileType === "xlsx" || sFileType === "xls"){
                 let fileReader = new FileReader();
                 fileReader.readAsBinaryString(sFile);
                 fileReader.onload = (event)=>{
@@ -22,31 +23,17 @@
                         datas = rowObject
                     });
                 }
+
+                document.getElementById('process').style.backgroundImage = "linear-gradient(to right, #004EF2, #0B85DB)"
+
+                archive()
+            }else{
+                error(1)
             }
-
-            document.getElementById('process').style.backgroundImage = "linear-gradient(to right, #004EF2, #0B85DB)"
-
-            document.getElementById('alerts').innerHTML = `O arquivo ${sFile.name} foi selecionado!`
-
-
-            if(alerts.classList.contains("hidden")){
-                alerts.classList.remove("hidden")
-            }
-            alerts.classList.remove('hide')
-            alerts.classList.add('show')
-
-            let timer = setTimeout(()=>{
-                alerts.classList.remove('show')
-                alerts.classList.add('hide')
-            },4800)
 
         });
 
-        document.getElementById('alerts').addEventListener('click',() =>{
-            alerts.classList.remove('show')
-            alerts.classList.add('hide')
-        })
-            
+        
 
 
         let v = 0
@@ -71,8 +58,8 @@
 
             //<canvas id="nchart" class="chartsjs" width="33" height="10" ></canvas>
             console.log(datas)
-            if(sFile === undefined){ 
-                alert("Nenhuma planilha foi inserida")
+            if(datas === undefined){ 
+                error(2)
             }else{
             
 
