@@ -24,7 +24,8 @@
                     });
                 }
 
-                document.getElementById('process').style.backgroundImage = "linear-gradient(to right, #004EF2, #0B85DB)"
+                document.getElementById('process').classList.remove("offline")
+                document.getElementById("process").classList.add("online")
 
                 archive()
             }else{
@@ -59,10 +60,11 @@
             //<canvas id="nchart" class="chartsjs" width="33" height="10" ></canvas>
             console.log(datas)
             if(datas === undefined){ 
+                console.log(y)
                 error(2)
             }else{
             
-
+            
             for(let i = 1; i <= 68; i++){
 
                 //criando o elemento canvas de forma automática
@@ -980,7 +982,10 @@
         //criação dos gráficos
 
         Chart.helpers.merge(Chart.defaults.global.plugins.datalabels, {
-            color: '#ffffff'
+            color: '#ffffff',
+            display: function (context) {
+                return context.dataset.data[context.dataIndex] !== 0;
+            }
         });
         Chart.defaults.global.defaultFontSize = 18;
 
@@ -2138,9 +2143,9 @@
                 })
                 
                 
-                for(let i = 1; i <= 68; i++){
+                /*for(let i = 1; i <= 68; i++){
                     document.getElementById(`nchart${i}`).style.display = "none"
-                }
+                }*/
 
                 document.getElementById("rot").style.display = "none"
                 document.getElementById("process").style.display = "none"

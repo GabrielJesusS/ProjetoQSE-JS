@@ -7,11 +7,25 @@
 .nButton{
     margin: 30px;
     padding: 5px 10px 5px 10px;
-    background-image: linear-gradient(to right, #004EF2, #0B85DB);
+    
     color: white;
     border: none;
     filter: drop-shadow(3px 3px 1px  #2222225b);
     
+}
+
+.offline{
+
+background-image: linear-gradient(to right, #494949 , #6a6a6a);
+}
+
+.online{
+
+background-image: linear-gradient(to right, #004EF2, #0B85DB);
+
+}
+.nButton#process:active{
+    background-image: linear-gradient(to right, red,black);
 }
 
 #fileUpload{
@@ -32,10 +46,6 @@
 
 #graficos{
    
-}
-
-#process{
-    background-image: linear-gradient(to right, #494949 , #6a6a6a);
 }
 
 .chartsjs{
