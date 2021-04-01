@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../Styles/style_sec.css">
     <link rel="stylesheet" href="../Styles/style_alert.css">
     <link rel="shortcut icon" href="../Content/Images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../Styles/style_popup.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
@@ -28,23 +29,54 @@
     </header>
     <div id="content">
             <div id="buttonss">
-                
+            
                     <input type="file" name="files" id="fileUpload"  accept=".xls,.xlsx">
                 
                 <label id="rot" for="fileUpload">
-                    <img src="../Content/Images/upload20px.png" alt="upload">
-                    Selecione o aquivo
+                    <img id="upLoadIMG"src="../Content/Images/upload20px.png" alt="upload">
+                    <span>Selecione o aquivo</span>
                 </label>
 
-                <button class = "nButton offline" type="button" id="process"><img src="../Content/Images/statistics20px.png" alt="statistic"> Processar dados</button>
+                <button class = "nButton offline" type="button" id="process"><img src="../Content/Images/statistics20px.png" alt="statistic"> <span>Processar dados</span></button>
 
                 <button class = "nButton" type="button" id="view" style="display:none">oi</button>
             </div>
     </div>
+
     <div class="alertBox hide hidden">
         <p id="alerts"></p>
     </div>
+
     <div id="graficos"></div>
+
+    <div id="popup">
+        <div id="popupContent">
+            <h2>Filtro de informações</h2>
+                <p>Por favor selecione os gráficos que deseja visualizar</p>
+            <div id="popupSystem">
+                <div class="popupOp" id="pop1">
+                    <p>Opções de filtragem</p>
+                    <select name="infos" id="selectInfos" onchange="self();disable()">
+                        <option value="none"></option>
+                        <option value="one">Apenas um gráfico</option>
+                        <option value="curse">Intervalo de gráficos</option>
+                        <option value="seeAll">Mostrar todos</option>
+                        <option value="mult">Seleção múltipla</option>
+                    </select>
+                    <!--<input type="text" class="opt1" name="SelOne" id="SelOneValue">
+                    <input type="text" class="opt1"name="SelCurse1" id="SelCurseValue1">-->
+                    <p>Gráficos selecionados:</p>
+                    <span id="selValues"></span>
+                </div>
+                <div class="popupOp" id="pop2">
+                    <p>Lista de perguntas(apenas para visualização)</p>
+                    <select name="ListaQ" id="QList" size="8" onchange="exec()"></select>
+                </div>
+            </div>
+            <button class="nButton online" id="filter"><span>Filtrar Gráficos</span></button>
+        </div>
+    </div>
+
     <div id="end">
     <footer><strong>
         <p>&copy; Gabriel Jesus & Paulo Chimelo</p>
@@ -52,7 +84,8 @@
     </div>
     <script type="text/javascript" src="../Scripts/alert.js"></script>
     <script type="text/javascript" src="../Scripts/processamento.js"></script>  
-    <script>
+    <script type="text/javascript" src="../Scripts/filter.js">
+    
     </script>      
 </body>
 </html>

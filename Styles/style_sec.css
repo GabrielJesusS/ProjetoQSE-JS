@@ -7,10 +7,17 @@
 .nButton{
     margin: 30px;
     padding: 5px 10px 5px 10px;
+    outline:none;
     
-    color: white;
     border: none;
     filter: drop-shadow(3px 3px 1px  #2222225b);
+    
+}
+
+.nButton span{
+   
+    font-size:15px;
+    color: white;
     
 }
 
@@ -24,9 +31,11 @@ background-image: linear-gradient(to right, #494949 , #6a6a6a);
 background-image: linear-gradient(to right, #004EF2, #0B85DB);
 
 }
-.nButton#process:active{
-    background-image: linear-gradient(to right, red,black);
+.nButton.online:active{
+    
+    background-image: linear-gradient(to right,#0B85DB, #72b2df );
 }
+
 
 #fileUpload{
     display: none;
@@ -36,12 +45,24 @@ background-image: linear-gradient(to right, #004EF2, #0B85DB);
     filter: drop-shadow(3px 3px 1px  #2222225b);
     background-image: linear-gradient(to right, #004EF2, #0B85DB);
     color: white;
-    height: 33px;
+    height: 32px;
     width: 180px;
     margin: 30px;
     display: flex;
-    justify-content: center;
     align-items: center;
+}
+
+#rot:active{
+    background-image: linear-gradient(to right,#0B85DB, #72b2df );
+}
+
+#rot span{
+    color: white;
+    padding-top: 8px;
+}
+
+#upLoadIMG{
+    padding: 6px;
 }
 
 #graficos{

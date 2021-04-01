@@ -1,0 +1,79 @@
+#popup{
+    background: rgba(0, 0, 0, 0.589);
+    height: 100%;
+    width: 100%;
+    position:fixed;
+    top: 0;
+    display : flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#popupContent{
+    display: inline-block;
+    height: 350px;
+    width: 600px;
+    background:white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+#popupSystem{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+#popupContent h2{
+    font-size: 3em;
+    
+}
+
+#selectInfos{
+    
+}
+
+.popupOp{
+    
+    width:50%;
+    
+}
+
+#pop1{
+    
+}
+
+#pop1 select{
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+#pop1 p{
+    font-size: 0.8em;
+    color: rgb(66, 66, 66);
+    
+}
+
+#pop2{
+    float: right;
+}
+
+#pop2 select{
+    width: 200px
+}
+
+#pop2 p{
+    font-size: 0.8em;
+    color: rgb(66, 66, 66);
+    
+}
+
+.opt1{
+    margin-bottom: 20px;
+}
+

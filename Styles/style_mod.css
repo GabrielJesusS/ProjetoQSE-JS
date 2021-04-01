@@ -5,6 +5,7 @@
 
 
 html{
+    
     height: 100%;
 }
 body{
@@ -13,6 +14,7 @@ body{
 }
 /* Inicio do css cabeçalho*/
 header{
+   
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -32,6 +34,7 @@ header{
 }
 
 #name h1{
+    
     display: block;
     padding: 10px;
     padding-top: 20px;

@@ -3,7 +3,7 @@ body{
 }
 
 .alertBox{
-    position: absolute;
+    position: fixed;
     right: 0;
     background-image: linear-gradient(to right, #004EF2, #0B85DB);
     font-size: 20px;

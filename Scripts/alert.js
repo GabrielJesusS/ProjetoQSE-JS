@@ -1,10 +1,13 @@
-var a = document.getElementById('alerts')
-var ab = document.querySelector('.alertBox')
+'use strict'
+const a = document.getElementById('alerts')
+const ab = document.querySelector('.alertBox')
+const ok = "linear-gradient(to right, #004EF2, #0B85DB)"
+const nOk = "linear-gradient(to right, #9B120C,#F9120C)"
 let y = 0
 
 
 function archive() {
-            ab.style.backgroundImage = "linear-gradient(to right, #004EF2, #0B85DB)"
+            ab.style.backgroundImage = ok
             a.innerHTML = `O arquivo ${sFile.name} foi selecionado!`
             y = 1
             closeMsg()
@@ -13,7 +16,8 @@ function archive() {
 }
 
 document.getElementById('alerts').addEventListener('click',() =>{
-    closeMsg()
+    alerts.classList.remove('show')
+    alerts.classList.add('hide')
 })
 
 function error(x) {
@@ -23,7 +27,7 @@ function error(x) {
         if(y == 0){
             y++
             closeMsg()
-            ab.style.backgroundImage = "linear-gradient(to right, #9B120C,#F9120C)"
+            ab.style.backgroundImage = nOk
 
             a.innerHTML = `O formato do arquivo ${sFile.name} não é suportado`
 
@@ -35,7 +39,7 @@ function error(x) {
             closeMsg()
             if(y == 0){
                 y++
-            ab.style.backgroundImage = "linear-gradient(to right, #9B120C,#F9120C)"
+            ab.style.backgroundImage = nOk
 
             a.innerHTML = `Nenhuma planilha foi selecionada`
 
@@ -67,6 +71,18 @@ function showMsg(){
     
     alerts.classList.remove('hide')
     alerts.classList.add('show')
-
+    y = 1
     closeMsg()
+}
+
+function OkProcess(){
+    let timer = setTimeout(() =>{
+        ab.style.backgroundImage = ok,
+        a.innerHTML = "O processamento foi realizado!!!"
+        closeMsg()
+        showMsg()
+        
+    },5000)
+    
+
 }

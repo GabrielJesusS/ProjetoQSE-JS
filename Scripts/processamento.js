@@ -1,13 +1,14 @@
-
+'use strict'
         let sFile;
         let datas
         let alerts = document.querySelector(".alertBox")
+        let perguntas
 
         document.getElementById('fileUpload').addEventListener('change',(event)=>{
             sFile = event.target.files[0];
             //console.log(event.target.files);
             //console.log(sFile.name)
-            sFileType = sFile.name.split('.').pop();
+            let sFileType = sFile.name.split('.').pop();
 
             if(sFileType === "xlsx" || sFileType === "xls"){
                 let fileReader = new FileReader();
@@ -21,6 +22,8 @@
                         let rowObject = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheet]);
                         
                         datas = rowObject
+                        perguntas = Object.keys(datas[1])
+                        console.log(perguntas)
                     });
                 }
 
@@ -28,27 +31,23 @@
                 document.getElementById("process").classList.add("online")
 
                 archive()
+
+                
             }else{
                 error(1)
             }
 
         });
 
+
         
-
-
-        let v = 0
         document.getElementById('view').addEventListener('click',()=>{
-
-            if(v == 0){
-            document.getElementById("nchart1").style.display = 'block';
+            const popup = document.querySelector("#popup")
+                popup.style.display = "flex"
                 console.log("clicado")
-                v++
-            }else{
-                document.getElementById("nchart1").style.display = 'none';
-                v-- 
-            }
         })
+
+
 
         document.getElementById('process').addEventListener('click',()=>{
             
@@ -2151,6 +2150,8 @@
                 document.getElementById("process").style.display = "none"
                 document.getElementById("view").style.display = "inline"
 
+                OkProcess()
+                listagem()
             }
              
         })
