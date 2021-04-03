@@ -4,10 +4,27 @@ const app = express();
 
 const morgan = require('morgan');
 
+const bodyParser = require('body-parser')
+
 const rotaFormulario = require('./routes/formulario')
 const rotaLogin = require('./routes/login')
 
 app.use(morgan('dev'));//Monitora as reqs e retorna um log
+
+app.use(bodyParser.urlencoded({extended:false}));//Apenas dados simples
+app.use(bodyParser.json());// Apenas formato jsonpara entrada
+
+app.use((req,res,next)=>{
+    res.header('Acces-Control-Allow-Origin', '*')
+    res.header('Acess-Control-Allow-Header', 
+    'Origin, X-Requested-With, Context-Type, Accept, Authorization');
+
+    if (req.method === 'OPTIONS'){
+        res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
+        return res.status(200).send({});
+    }
+    next();
+})
 
 app.use('/formulario', rotaFormulario);
 app.use('/login', rotaLogin)
