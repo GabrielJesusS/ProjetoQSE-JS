@@ -77,11 +77,16 @@ function showMsg(){
 
 function OkProcess(){
     let timer = setTimeout(() =>{
+        document.querySelector("#view").classList.remove("offline")
+        document.querySelector("#view").classList.add("online")
+        document.querySelector(".loading").classList.add("offScreen")
         ab.style.backgroundImage = ok,
         a.innerHTML = "O processamento foi realizado!!!"
         closeMsg()
-        showMsg()
-        
+        showMsg()  
+        let timer1 = setTimeout(()=>{
+            document.querySelector(".loading").style.display = "none"
+        }, 900)
     },5000)
     
 

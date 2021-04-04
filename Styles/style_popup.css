@@ -4,7 +4,7 @@
     width: 100%;
     position:fixed;
     top: 0;
-    display : flex;
+    display : none;
     justify-content: center;
     align-items: center; 
 }
@@ -79,4 +79,5 @@
 
 #selValues{
     text-align: left;
+    font-size: 11px;
 }

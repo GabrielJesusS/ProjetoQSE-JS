@@ -37,7 +37,7 @@ function listagem(){
     const list = document.querySelector("#QList")
     for(let i = 0; i < 73; i++){
 
-            if(i == 0 || i ==1 || i ==4 || i == 33){
+            if(i == 0 || i ==1 || i ==4 || i == 33 || i == 72){
                 }else{
             let opt = document.createElement("option")
             opt.text = perguntas[i]
@@ -97,10 +97,22 @@ function insertIu(){
     if(selG == 8 || selG == 18 || selG == 28 || selG == 38 || selG == 48 || selG == 58){
         selValues.innerHTML+= `${iu}<br>`
     }else{
-        selValues.innerHTML+= `${iu}`
+        selValues.innerHTML+= `${iu} | `
     }
     selG++
+    console.log(qList.selectedIndex)
+    console.log(grSelect)
     }else{
         alert("O número repetiu")
     }
 }
+
+document.getElementById("filter").addEventListener("click",() =>{
+    console.log("oi")
+    if(opf == 0){
+        for(let i = 0; i < grSelect.length; i++){
+            let index = grSelect[i]
+            document.getElementById(`nchart${index+1}`).style.display = "block"
+        }
+    }
+})

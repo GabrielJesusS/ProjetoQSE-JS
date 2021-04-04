@@ -45,6 +45,9 @@
             const popup = document.querySelector("#popup")
                 popup.style.display = "flex"
                 console.log("clicado")
+                for(let i = 1; i <= 68; i++){
+                    document.getElementById(`nchart${i}`).style.display = "none"
+                }
         })
 
 
@@ -52,7 +55,7 @@
         document.getElementById('process').addEventListener('click',()=>{
             
             
-            
+            document.querySelector(".loading").style.display = "inline-block"
             //document.write(datas.length)
             //document.write("<hr><br>")
 
@@ -2142,9 +2145,9 @@
                 })
                 
                 
-                /*for(let i = 1; i <= 68; i++){
+                for(let i = 1; i <= 68; i++){
                     document.getElementById(`nchart${i}`).style.display = "none"
-                }*/
+                }
 
                 document.getElementById("rot").style.display = "none"
                 document.getElementById("process").style.display = "none"

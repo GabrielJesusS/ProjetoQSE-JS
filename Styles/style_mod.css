@@ -154,3 +154,41 @@ footer{
     background-image: linear-gradient( to top, #004EF2, #0B85DB);
     border-radius: 3px;
 }
+
+.carregamento{
+    text-align: center;
+}
+
+.loading{
+    width: 15rem;
+    height: 15rem;
+    display: none;
+    border: 6px solid rgba(11, 132, 219, 0.315);
+    border-radius: 50%;
+    border-top-color: #0B85DB;
+    
+    animation: 1s spin infinite ease-in-out;
+}
+
+.loading.offScreen {
+    animation: 1s fadeOut ease-in;
+}
+
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    0%{ opacity: 0}
+
+    100%{ opacity: 1}
+}
+
+@keyframes fadeOut{
+    0%{ opacity: 1}
+
+    100%{ opacity: 0}
+}
