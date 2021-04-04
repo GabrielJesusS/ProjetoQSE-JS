@@ -10,8 +10,13 @@ router.get('/', (req,res,next)=>{
 
 //Insere uma nova informação
 router.post('/', (req,res,next)=>{
+    const formulario ={
+        nome: req.body.nome,
+        idade: req.body.idade
+    };
     res.status(201).send({
-        mensagem: 'Usando o POST dentro da rota Formularios'
+        mensagem: 'Usando o POST dentro da rota Formularios',
+        dadosPassados: formulario
     });
 });
 
