@@ -13,26 +13,78 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script type="text/javascript" src="../Scripts/objects.js"></script>
-    
+    <script src="https://kit.fontawesome.com/f826d3c335.js" crossorigin="anonymous"></script>
     
     <title>Projeto</title>
 </head>
-<body>
+<body class="signInJs">
     <header>
         <div class="logreturn"><button id="AProje"><a href="../index.html">Retornar</a></button></div>
     </header>
-    <div id="content">
-         <div id="logScreen">
-             <h2>Olá! Seja bem vindo!</h2>
-             <p>Caso não tenha um cadstro, faça-o aqui!</p>
-             <!--<h2>Crie sua conta!</h2>
-             <p>É fácil, rapido e não custa nada!</p>
+    <div class="box">
+         <div class="content first">
+             <div class="coluna1">
+                 <h2 class="TitleLog titleOne">Olá! Seja bem vindo!</h2>
+                 <p class="descriptions desOne">Para prosseguir com a ferramenta</p>
+                 <p class="descriptions desOne">porfavor faça login</p>
+                 <button id="signIn" class="btnSys btnOne">Sign in</button>
+             </div>
+             <div class="coluna2">
+                <h2 class="TitleLog titleTwo">Crie sua conta</h2>
+                <p class="descriptions desTwo">Caso não tenha seu usuário ainda</p>
+                <p class="descriptions desTwo">basta cria-lo aqui!</p>
+                <form class="userInfos">
+                    <label class="label-input" for="">
+                        <i class="far fa-user iconMod"></i>
+                        <input type="text" placeholder="Nome">
+                    </label>
+                    
+                    <label class="label-input" for="">
+                        <i class="far fa-envelope iconMod"></i>
+                        <input type="email" placeholder="Email">
+                    </label>
+                    
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock iconMod"></i>
+                        <input type="password"placeholder="Password">
+                    </label>
+                    
 
-             <div id="logSys"></div>-->
+                    <button class="btnSys btnTwo">Sign up</button>
+                </form>
+             </div>
+         </div>
+         <div class="content second">
+            <div class="coluna1">
+                <h2 class="TitleLog titleOne">Seja bem vindo de volta!</h2>
+                <p class="descriptions desOne">Caso ainda não tenha um usuário.</p>
+                <p class="descriptions desOne">faça seu registro aqui</p>
+                <button id="signUp" class="btnSys btnOne">Sign up</button>
+            </div>
+            <div class="coluna2">
+               <h2 class="TitleLog titleTwo">Faça login</h2>
+               <p class="descriptions desTwo">Seja bem vindo, para prosseguir</p>
+               <p class="descriptions desTwo">porfavor faça login</p>
+               <form class="userInfos">
+                
+                <label class="label-input" for="">
+                    <i class="far fa-envelope iconMod"></i>
+                    <input type="email" placeholder="Email">
+                </label>
+                
+                <label class="label-input" for="">
+                    <i class="fas fa-lock iconMod"></i>
+                    <input type="password"placeholder="Password">
+                </label>
+                   <a class="password" href="#">Esqueceu sua senha?</a>
+                   <button class="btnSys btnTwo">Sign in</button>
+               </form>
+            </div>
          </div>
     </div>
     <footer><strong>
         <p>&copy; Gabriel Jesus & Paulo Chimelo</p>
-    </strong></footer>   
+    </strong></footer>
+    <script type="text/javascript" src="../Scripts/login.js"></script>   
 </body>
 </html>

@@ -1,33 +1,303 @@
-/*header{
-
-}
-.logreturn{
-    margin: 0 auto;
-}
-
-#AProje{
-    border:none;
-    background: none;
-}
-
-#AProje a{
+body{
+    background-color: #DEE4EF;
     
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.3em;
 }
 
-#logScreen{
-    color: white;
-    overflow: hidden;
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.content{
+    background-color: white;
     border-radius: 15px;
-    width: 750px;;
-    height: 400px;
-    background-image: linear-gradient(to right, #004EF2, #0B85DB);
+    width: 960px;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
 }
 
-#logSys{
-    width: 60%;
+.content::before{
+    content: "";
+    position: absolute;
+    background-color: #004FF1;
+    width: 40%;
     height: 100%;
-    background: #E5E7EA;
-}*/
+    border-top-left-radius: 15px ;
+    border-bottom-left-radius: 15px ;
+
+
+    left:0%;
+}
+
+.second{
+    position: absolute;
+    display: flex;
+
+}
+
+.second .coluna1 {
+    order: 2;
+    z-index: -1;
+}
+
+.second .coluna2 {
+    order: 1;
+    z-index: -1;
+}   
+
+.first{
+    display: flex;
+}
+
+.coluna1{
+    text-align: center;
+    width:40%;
+    z-index: 1;
+}
+
+.coluna2{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.first .coluna2{
+    z-index: 12;
+}
+.titleOne{
+    color: #ffffff;
+}
+
+.titleTwo{
+    color: #004FF1;
+}
+
+.TitleLog{
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.descriptions{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+.desOne{
+    color:white;
+}
+
+.desTwo{
+    color:#b8b8b8;
+}
+
+
+
+.btnSys{
+    border-radius: 15px;
+    text-transform: uppercase;
+    color:white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 42px;
+    cursor: pointer;
+    width: 150px;
+    align-self: center;
+    border:none;
+    outline:none;
+}
+
+.btnOne{
+    background-color:transparent;
+    border: 1px white solid;
+    transition: background-color 0.2s;
+}
+
+.btnOne:hover{
+    background-color:white;
+    color: #004FF1;
+}
+
+.btnTwo{
+    background-color:  #004ff1;
+    border: 1px #004ff1 solid;
+    transition: background-color 0.2s;
+}
+
+.btnTwo:hover{
+    border: 1px #004ff1 solid;
+    background-color:white;
+    color: #004FF1;
+}
+
+
+
+.userInfos{
+    display: flex;
+    flex-direction:column;
+    width:60%;
+    
+}
+
+.userInfos input{
+    outline:none;
+    height: 45px;
+    border: none;
+    background-color:#e3e5e9;
+    width:100%;
+}
+
+.label-input{
+    display: flex;
+    align-items: center;
+    background-color:#e3e5e9;
+    margin: 8px;
+}
+
+.iconMod{
+    padding: 0 5px;
+}
+
+.password{
+    color: #5c5c5c;
+    font-size: 14px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.signInJs .first .coluna1{
+    z-index: -1;
+}
+
+.signInJs .first .coluna2{
+    position: relative;
+    z-index: -1;
+    animation: moveOff 1s;
+}
+
+.signInJs .second .coluna2{
+    z-index: 12;
+
+}
+
+.signInJs .second .coluna1{
+    z-index: 14;
+}
+
+.signInJs .content::before{
+    left: 60%;
+    border-top-left-radius: 0 ;
+    border-bottom-left-radius: 0 ;
+    border-top-right-radius: 15px ;
+    border-bottom-right-radius: 15px ;
+    animation: slidein 2s;
+    z-index: 13;
+}
+
+
+
+
+
+.signUpJs .second .coluna1{
+    z-index: -1;
+}
+
+.signUpJs .second .coluna2{
+    position: relative;
+    animation: moveOn 1s;
+}
+
+
+
+.signUpJs .first .coluna2{
+    z-index: 12;
+}
+
+.signUpJs .first .coluna1{
+    z-index: 13;
+}
+
+.signUpJs .content::before{
+    left: none;
+    animation: slideout 2s;
+    z-index: 12;
+}
+
+
+
+
+/*Animação*/
+
+@keyframes moveOn{
+
+    from {
+        right: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+
+
+    to{
+        right: -110px;
+        opacity: 0;
+        z-index: -1;
+    }
+
+}
+
+@keyframes moveOff{
+
+    from {
+        left: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+
+
+    to{
+        left: -110px;
+        opacity: 0;
+        z-index: -1;
+    }
+
+}
+
+@keyframes slidein{
+    from {
+        left: 0;
+        width: 40%;
+    }
+    
+    50%{
+        width: 50%;
+    }
+
+    to{
+        left: 60%;
+        width: 40%;
+    }
+}
+
+@keyframes slideout{
+    from {
+        left: 60%;
+        width: 40%;
+    }
+
+    50%{
+        width: 50%;
+    }
+
+    to{
+        left: 0;
+        width: 40%;
+    }
+}
