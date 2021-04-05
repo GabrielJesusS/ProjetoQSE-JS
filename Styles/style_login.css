@@ -7,7 +7,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 89vh;
 }
 
 .content{
@@ -300,4 +300,19 @@ body{
         left: 0;
         width: 40%;
     }
+}
+
+/*extras*/
+
+#backMenu{
+    display:flex;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    font-size: 40px;
+    color: white;
+    background-color: #004FF1;
+    padding: 10px;
+    border-radius: 15px;
+    text-decoration: none;
 }
