@@ -1,0 +1,33 @@
+/*header{
+
+}
+.logreturn{
+    margin: 0 auto;
+}
+
+#AProje{
+    border:none;
+    background: none;
+}
+
+#AProje a{
+    
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+#logScreen{
+    color: white;
+    overflow: hidden;
+    border-radius: 15px;
+    width: 750px;;
+    height: 400px;
+    background-image: linear-gradient(to right, #004EF2, #0B85DB);
+}
+
+#logSys{
+    width: 60%;
+    height: 100%;
+    background: #E5E7EA;
+}*/

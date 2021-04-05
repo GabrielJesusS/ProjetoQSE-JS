@@ -109,10 +109,43 @@ function insertIu(){
 
 document.getElementById("filter").addEventListener("click",() =>{
     console.log("oi")
-    if(opf == 0){
-        for(let i = 0; i < grSelect.length; i++){
-            let index = grSelect[i]
-            document.getElementById(`nchart${index+1}`).style.display = "block"
-        }
+    switch(opf){
+        case 0:
+                let index = grSelect[0]
+                document.getElementById(`nchart${index+1}`).style.display = "block"
+            
+            break;
+
+        case 1:
+            let prim = grSelect[0]+1
+            let seco = grSelect[1]+1
+
+            if(prim > seco){
+                let simp = prim
+                prim = seco
+                seco = simp
+            }
+
+            for(let i = prim; i <= seco; i++) {
+                document.getElementById(`nchart${i}`).style.display = "block"
+            }
+            break;
+        
+        case 2:
+            for(let i = 1; i <= 68; i++){
+                document.getElementById(`nchart${i}`).style.display = "block"
+                }
+            break;
+            
+        
+        case 3:
+            for(let i = 0; i < grSelect.length; i++){
+                let index = grSelect[i]
+                document.getElementById(`nchart${index+1}`).style.display = "block"
+            }
+            break;
+
     }
+        
+    
 })

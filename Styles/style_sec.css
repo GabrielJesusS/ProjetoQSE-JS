@@ -75,5 +75,26 @@ background-image: linear-gradient(to right, #004EF2, #0B85DB);
     height: 10px;
     margin: 0 auto;
     margin-top: 40px;
+    margin-bottom: 90px;
     
+}
+
+#backTop{
+    z-index: 0;
+    border-radius: 5px;
+    position: fixed;
+    width:50px;
+    height:50px;
+    background-image: linear-gradient(to right, #0B85DB, #72b2df );
+    bottom: 40px;
+    right: 50px;
+}
+
+#backTop img{
+    position: absolute;
+    top: 0; 
+    bottom: 0;
+    left: 0; 
+    right: 0;
+    margin: auto;
 }

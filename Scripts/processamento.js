@@ -41,14 +41,17 @@
 
 
         
-        document.getElementById('view').addEventListener('click',()=>{
+        document.querySelector("#view").addEventListener('click',()=>{
+            if(viewGrf == true){
             const popup = document.querySelector("#popup")
                 popup.style.display = "flex"
                 console.log("clicado")
                 for(let i = 1; i <= 68; i++){
                     document.getElementById(`nchart${i}`).style.display = "none"
+                    }
                 }
-        })
+            }
+        )
 
 
 

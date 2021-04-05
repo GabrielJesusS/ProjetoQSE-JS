@@ -4,6 +4,7 @@ const ab = document.querySelector('.alertBox')
 const ok = "linear-gradient(to right, #004EF2, #0B85DB)"
 const nOk = "linear-gradient(to right, #9B120C,#F9120C)"
 let y = 0
+let viewGrf = false
 
 
 function archive() {
@@ -83,7 +84,8 @@ function OkProcess(){
         ab.style.backgroundImage = ok,
         a.innerHTML = "O processamento foi realizado!!!"
         closeMsg()
-        showMsg()  
+        showMsg() 
+        viewGrf = true 
         let timer1 = setTimeout(()=>{
             document.querySelector(".loading").style.display = "none"
         }, 900)
