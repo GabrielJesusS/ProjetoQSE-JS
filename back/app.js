@@ -7,7 +7,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser')
 
 const rotaFormulario = require('./routes/formulario')
-const rotaLogin = require('./routes/login')
+const rotaLogin = require('./routes/users')
 
 app.use(morgan('dev'));//Monitora as reqs e retorna um log
 
@@ -27,7 +27,7 @@ app.use((req,res,next)=>{
 })
 
 app.use('/formulario', rotaFormulario);
-app.use('/login', rotaLogin)
+app.use('/users', rotaLogin)
 
 //Quando a req solicita uma rota que não existe
 app.use((req,res,next)=>{
