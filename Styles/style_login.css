@@ -244,6 +244,9 @@ body{
         z-index: 12;
     }
 
+    10%{
+        opacity: 0.2;
+    }
 
     to{
         right: -110px;
@@ -261,6 +264,9 @@ body{
         z-index: 12;
     }
 
+    10%{
+        opacity: 0.2;
+    }
 
     to{
         left: -110px;

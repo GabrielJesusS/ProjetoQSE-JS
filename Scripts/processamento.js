@@ -58,7 +58,7 @@
         document.getElementById('process').addEventListener('click',()=>{
             
             
-            document.querySelector(".loading").style.display = "inline-block"
+            
             //document.write(datas.length)
             //document.write("<hr><br>")
 
@@ -68,7 +68,7 @@
                 console.log(y)
                 error(2)
             }else{
-            
+                document.querySelector(".loading").style.display = "inline-block"
             
             for(let i = 1; i <= 68; i++){
 
@@ -988,10 +988,10 @@
 
         Chart.helpers.merge(Chart.defaults.global.plugins.datalabels, {
             color: '#ffffff',
-            display: function (context) {
-                return context.dataset.data[context.dataIndex] !== 0;
+            display: false
             }
-        });
+        );
+
         Chart.defaults.global.defaultFontSize = 18;
 
             let colors = ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
