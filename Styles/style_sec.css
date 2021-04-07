@@ -6,7 +6,7 @@
 
 .nButton{
     margin: 30px;
-    padding: 5px 10px 5px 10px;
+    padding: 2px 10px 2px 10px;
     outline:none;
     color: white;
     border: none;
@@ -31,6 +31,11 @@ background-image: linear-gradient(to right, #494949 , #6a6a6a);
 background-image: linear-gradient(to right, #004EF2, #0B85DB);
 
 }
+.online:hover{
+    cursor: pointer;
+    background-image: linear-gradient(to right, #1d5fee, #2c91da);
+}
+
 .nButton.online:active{
     
     background-image: linear-gradient(to right,#0B85DB, #72b2df );
@@ -50,6 +55,7 @@ background-image: linear-gradient(to right, #004EF2, #0B85DB);
     margin: 30px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 #rot:active{
@@ -59,10 +65,6 @@ background-image: linear-gradient(to right, #004EF2, #0B85DB);
 #rot span{
     color: white;
     padding-top: 8px;
-}
-
-#upLoadIMG{
-    padding: 6px;
 }
 
 #graficos{
@@ -85,16 +87,20 @@ background-image: linear-gradient(to right, #004EF2, #0B85DB);
     position: fixed;
     width:50px;
     height:50px;
-    background-image: linear-gradient(to right, #0B85DB, #72b2df );
+    background-color: #004EF2;
     bottom: 40px;
     right: 50px;
+    text-align: center;
 }
 
-#backTop img{
-    position: absolute;
-    top: 0; 
-    bottom: 0;
-    left: 0; 
-    right: 0;
-    margin: auto;
+#backTop i{
+    
+    font-size: 50px;
+    color: white;
+}
+
+.buttonIcon{
+    color: white;
+    font-size: 20px;
+    margin: 5px;
 }

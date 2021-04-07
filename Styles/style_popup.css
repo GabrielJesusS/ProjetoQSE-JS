@@ -21,6 +21,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     position: relative;
+    animation: dropDown .5s;
 }
 
 #popupSystem{
@@ -49,6 +50,7 @@
 }
 
 #pop1 select{
+    outline: none;
     width: 200px;
     margin-bottom: 20px;
 }
@@ -64,6 +66,7 @@
 }
 
 #pop2 select{
+    outline:none;
     width: 200px
 }
 
@@ -83,7 +86,15 @@
 }
 
 @keyframes dropDown{
+    0%{ 
+        opacity:0;
+        bottom: 20%;
+    }
 
+    100%{ 
+        opacity:1;
+        bottom: 0%;
+    }
 }
 
 @keyframes pushUp{

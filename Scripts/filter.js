@@ -51,17 +51,35 @@ function listagem(){
 
 function exec(){
     
-    if(opf == 0 && selG == 0){
-        insertIu()
+    if(opf !== undefined){
 
-    }else if( opf == 1 && selG < 2){
-        insertIu()
-    }else if(opf == 3){
-        insertIu()
-    }else{
-        alert("deu erro ai amigo")
+        if(opf == 0 && selG == 0){
+            insertIu()
+        }else if( opf == 1 && selG < 2){
+            insertIu()
+        }else if(opf == 3){
+            insertIu()
+        }else{
+
+            switch(opf){
+                case 0:
+                    error(3)
+                    break;
+
+                case 1:
+                    error(4)
+                    break;
+
+                case 2:
+                    error(5)
+                    break;
+            }
+            
+        }
+        
+        }else{
+            error(7)
     }
-
     
 }
 
@@ -103,7 +121,7 @@ function insertIu(){
     console.log(qList.selectedIndex)
     console.log(grSelect)
     }else{
-        alert("O número repetiu")
+        error(6)
     }
 }
 

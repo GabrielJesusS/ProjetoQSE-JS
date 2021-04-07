@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../Styles/style_alert.css">
     <link rel="shortcut icon" href="../Content/Images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../Styles/style_popup.css">
+    
+    <script src="https://kit.fontawesome.com/f826d3c335.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
@@ -34,16 +36,16 @@
                     <input type="file" name="files" id="fileUpload"  accept=".xls,.xlsx">
                 
                 <label id="rot" for="fileUpload">
-                    <img id="upLoadIMG"src="../Content/Images/upload20px.png" alt="upload">
+                    <i class="fas fa-upload buttonIcon"></i>
                     <span>Selecione o aquivo</span>
                 </label>
 
-                <button class = "nButton offline" type="button" id="process"><img src="../Content/Images/statistics20px.png" alt="statistic"> <span>Processar dados</span></button>
+                <button class = "nButton offline" type="button" id="process"><i class="fas fa-chart-pie buttonIcon"></i><span>Processar dados</span></button>
 
-                <button class = "nButton offline" type="button" id="view" style="display:none"><img src="../Content/Images/magnifier20px.png" alt="lupa"><span> Filtrar informações</span></button>
+                <button class = "nButton offline" type="button" id="view" style="display:none"><i class="fas fa-search buttonIcon"></i><span> Filtrar informações</span></button>
             </div>
     </div>
-    <a href="#" id="backTop"><img src="../Content/Images/upwards-arrow30px.png" alt="backtotop"></a>
+    <a href="#" id="backTop"><i class="fas fa-angle-up"></i></a>
     <div class="carregamento">
         <div class="loading"></div>
     </div>

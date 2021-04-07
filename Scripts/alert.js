@@ -6,6 +6,8 @@ const nOk = "linear-gradient(to right, #9B120C,#F9120C)"
 let y = 0
 let viewGrf = false
 
+let errMsg = [`Nenhuma planilha foi selecionada`,'Por favor selecione apenas um gráfico!', 'Por favor selecione apenas dois gráficos!',"Não necessita de seleção!","O valor repetiu! Selecione outro!","Nenhuma opção foi selecionada!"]
+
 
 function archive() {
             ab.style.backgroundImage = ok
@@ -22,35 +24,47 @@ document.getElementById('alerts').addEventListener('click',() =>{
 })
 
 function error(x) {
+    let MsgErr 
     switch(x){
-
+        
         case 1:   
-        if(y == 0){
-            y++
-            closeMsg()
-            ab.style.backgroundImage = nOk
-
-            a.innerHTML = `O formato do arquivo ${sFile.name} não é suportado`
-
-            showMsg()
-        }
+            MsgErr = `O formato do arquivo ${sFile.name} não é suportado`
+        break;
+            
+        case 2:
+            MsgErr = errMsg[0]
         break;
 
-        case 2:
-            closeMsg()
+        case 3:
+            MsgErr = errMsg[1] 
+        break;
+
+        case 4:
+            MsgErr = errMsg[2]
+        break;
+
+        case 5:
+            MsgErr = errMsg[3]
+        break;
+
+        case 6:
+            MsgErr = errMsg[4]
+        break;
+
+        case 7:
+            MsgErr = errMsg[5]
+        break;
+    }
+
+    closeMsg()
             if(y == 0){
                 y++
             ab.style.backgroundImage = nOk
 
-            a.innerHTML = `Nenhuma planilha foi selecionada`
+            a.innerHTML = MsgErr
 
             showMsg()
             }
-        break;
-
-    
-
-    }
 
 }
 
