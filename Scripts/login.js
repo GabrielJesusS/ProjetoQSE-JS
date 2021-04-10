@@ -19,12 +19,13 @@ function fazPost(url, body){
     request.send(body)
     request.onload = function(){
         console.log(this.responseText)
-    }
+        if (this.responseText ==='{"messagem":"Usuário criado com sucesso"}'){
+            alert('Usuário criado com sucesso')
+            window.location.href = ""
+        }else{
+            alert('Não foi possivel realizar o cadastro')
+        }
 
-    if (request.responseText === {"messagem":"Usuário criado com sucesso"}){
-        archive2()
-    } else {
-       error2() 
     }
 
     return request.responseText
@@ -57,15 +58,18 @@ function fazGet(url, body){
 
     request.onload = function(){
         console.log(this.responseText)
+        if (this.responseText === '{"messagem":"Usuario autenticado"}'){
+            console.log('a')
+            window.location.href = "../index.html"
+        }else{
+            alert('Credenciais Invalidas')
+            console.log('B')
+        }
     }
 
     let proxima = document.getElementById('backMenu');
-    if (request.responseText = '"messagem":"Usuario autenticado"'){
-        console.log('a')
-        proxima.click
-    }else{
-        console.log('b')
-    }
+    //console.log(resposta)
+    console.log(request.responseText)
 
     return request.responseText 
 }
@@ -84,6 +88,7 @@ function logar(){
     });
 
     fazGet(url, body)
+    console.log(fazGet.return)
 }
 
 
