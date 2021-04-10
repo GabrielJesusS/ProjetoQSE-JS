@@ -31,12 +31,11 @@
                 document.getElementById("process").classList.add("online")
 
                 archive()
-
                 
             }else{
                 error(1)
             }
-
+ 
         });
 
 
@@ -46,9 +45,15 @@
             const popup = document.querySelector("#popup")
                 popup.style.display = "flex"
                 console.log("clicado")
-                for(let i = 1; i <= 68; i++){
-                    document.getElementById(`nchart${i}`).style.display = "none"
-                    }
+                selG = 0
+                        while(grSelect.length){
+                            grSelect.pop()
+                        }
+                        while(gValues.length){
+                            gValues.pop()
+                        }
+                        selValues.innerText = ""
+                    
                 }
             }
         )
@@ -99,9 +104,154 @@
 
             console.log("teste")
 
+            //console.log(datas[2][`${perguntas[1]}`])
+
+            //contagem de respostas
+            /*let newQuestion = []
+            for(let i = 0; i < perguntas.length; i++){
+
+                if(i == 0 || i == 1 || i == 4 || i ==33 || i==72){
+                    console.log("this is a inverted program text, please ignore")
+                }else{
+                    newQuestion.push(perguntas[i])
+                }
+                
+                let provesQuest = {}
+                for(let j = 0; j < datas.length; j++){
+
+                if(i == 0 || i == 1 || i == 4 || i ==33 || i==72){
+                        console.log("this is a inverted program text, please ignore")
+                }else if(i ==8){
+                    
+                    let date = new Date()
+                    let ano = date.getFullYear()
+                    let idade = datas[j][`${perguntas[i]}`]
+                    let anob =  ano - 1900
+                    let days = 0
+                    
+                    for(let k = 1; k <= anob; k++){
+                        if(k%4 === 0){
+                            days+=366
+                        }
+                        else{
+                            days+=365
+                        }
+                    }
+
+                    idade = days - idade
+                    idade = idade/365
+                    idade = Math.round(idade)
+                    
+
+                let timersI = ["Entre 18 e 20 anos", "Entre 21 e 25 anos", "Entre 26 e 30 anos", "Entre 31 e 50 anos", "Mais que 50 anos"]
+
+                
+                    if(idade >= 18 && idade <= 20){
+                        if(timersI[0] in provesQuest ){
+                            provesQuest[`${timersI[0]}`]+=1;
+                        }else{
+                            provesQuest[`${timersI[0]}`] =1;
+                        }
+                    }else if(idade >= 21 && idade <= 25){
+                        if(timersI[1] in provesQuest ){
+                            provesQuest[`${timersI[1]}`]+=1;
+                        }else{
+                            provesQuest[`${timersI[1]}`] =1;
+                        }
+                    }else if(idade >= 26 && idade <= 30){
+                        if(timersI[2] in provesQuest ){
+                            provesQuest[`${timersI[2]}`]+=1;
+                        }else{
+                            provesQuest[`${timersI[2]}`] =1;
+                        }
+                    }else if(idade >= 31 && idade <= 50){
+                        if(timersI[3] in provesQuest ){
+                            provesQuest[`${timersI[3]}`]+=1;
+                        }else{
+                            provesQuest[`${timersI[3]}`] =1;
+                        }
+                    }else if(idade > 50){
+                        if(timersI[4] in provesQuest ){
+                            provesQuest[`${timersI[4]}`]+=1;
+                        }else{
+                            provesQuest[`${timersI[4]}`] =1;
+                        }
+                    }
+
+                }else{
+                       
+                    if(datas[j][`${perguntas[i]}`] in provesQuest ){
+                        provesQuest[`${datas[j][`${perguntas[i]}`]}`]+=1;
+                    }else{
+                        provesQuest[`${datas[j][`${perguntas[i]}`]}`] = 1
+                    }
+
+                    }
+                
+                }
+                if(Object.keys(provesQuest).length != 0){questoes.push(provesQuest)}
+
+            }
+
             
-           
-            //fim das variáveis
+
+            console.log(newQuestion)
+            console.log(questoes)
+
+            let colors = ["#1761FF", "#FF2900", "#FF9100", "#00A500", "#BB00B3", "#00A6D8", "#FE2F6F", "#4AB800", "#EC150F", "#1467B6", "#B827B7"]
+            let ctx = []
+            for(let i = 1; i <= 70; i++){
+                ctx.push(document.getElementById(`nchart${i}`))
+            }
+
+            let questLista =[]
+            for(let i = 0; i <= 67; i++){
+                let lol = []
+                lol.push(Object.keys(questoes[i]))
+                questLista.push(lol)
+            }
+            let questListNum = []
+
+            for(let i = 0; i <= 67; i++){
+                let lol = []
+                for(let j = 0; j < questLista[i].length; j++){
+                lol.push(j)
+                questListNum.push(lol)
+                }
+            }
+
+            console.log(questLista[6])
+            console.log(questListNum[6])
+            console.log(Object.keys(questoes[6]))
+            console.log(questoes[2][`${Object.keys(questoes[2])}`])
+            for(let i = 1; i <= 68; i++){
+
+               
+                let k = i-1
+                let l = []
+
+                var chartGraph = new Chart(ctx[i],{
+                    type: "doughnut",
+                    data:{
+                        labels: Object.keys(questoes[k]),
+                        datasets: [{
+                            data: questoes[i][`${Object.keys(questoes[i])}`],
+                            
+                            backgroundColor: colors
+        
+                        }]
+                    },
+                        options: {
+                        title: {
+                            display: true,
+                            text: `${newQuestion[k]}`,
+                            fontSize: 20
+                        },
+
+                    }
+                })
+            }
+           */
 
             //inicio das contagens
             for(let i = 0; i < datas.length; i++){

@@ -85,6 +85,17 @@
     font-size: 11px;
 }
 
+.close{
+    color: red;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 30px;
+    left: 280px;
+    position: relative;
+    cursor: pointer;
+}
+
 @keyframes dropDown{
     0%{ 
         opacity:0;

@@ -33,6 +33,11 @@ document.querySelector("#filter").addEventListener("click",()=>{
 
 })
 
+document.querySelector("#closePopUp").addEventListener("click",()=>{
+    document.querySelector("#popup").style.display = "none"
+
+})
+
 function listagem(){
     const list = document.querySelector("#QList")
     for(let i = 0; i < 73; i++){
@@ -126,6 +131,10 @@ function insertIu(){
 }
 
 document.getElementById("filter").addEventListener("click",() =>{
+    for(let i = 1; i <= 68; i++){
+        document.getElementById(`nchart${i}`).style.display = "none"
+        }
+
     console.log("oi")
     switch(opf){
         case 0:

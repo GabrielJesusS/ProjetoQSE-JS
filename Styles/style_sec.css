@@ -28,7 +28,7 @@ background-image: linear-gradient(to right, #494949 , #6a6a6a);
 
 .online{
 
-background-image: linear-gradient(to right, #004EF2, #0B85DB);
+background-color: #004EF2;
 
 }
 .online:hover{
@@ -48,7 +48,7 @@ background-image: linear-gradient(to right, #004EF2, #0B85DB);
 
 #rot{
     filter: drop-shadow(3px 3px 1px  #2222225b);
-    background-image: linear-gradient(to right, #004EF2, #0B85DB);
+    background-color: #004EF2;
     color: white;
     height: 32px;
     width: 180px;

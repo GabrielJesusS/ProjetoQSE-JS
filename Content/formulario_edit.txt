@@ -1,0 +1,90 @@
+<!--<div id="perguntas">
+        <h4>1. Qual o seu curso?</h4>
+        <select name="curso" id="selectCurso">
+            <option value="none"></option>
+            <option value="one">ADS - Análise e Desenvolvimento de Sistemas</option>
+            <option value="curse">GPI  - Gestão de Produção Industrial</option>
+            <option value="seeAll">GRH - Gestão de Recursos Humanos</option>
+            <option value="mult">DSM - Desenvolvimento de Software Multiplataforma</option>
+        </select>
+        <h4>2. Qual o período que cursa?</h4>
+        <select name="periodo" id="selectPeriodo">
+            <option value="none"></option>
+            <option value="one">Matutino</option>
+            <option value="curse">Noturno</option>
+        </select>
+        <h4>3. Informe os 7 últimos dígitos do seu RA (109048xxxxxxx)</h4>
+        <input type="number" name="ra" id="inputRA">
+        <h4>4. Qual o estado do Brasil que você nasceu?</h4>
+        <select name="curso" id="selectCurso">
+            <option value="none"></option>
+            <option value="one">ADS - Análise e Desenvolvimento de Sistemas</option>
+            <option value="curse">GPI  - Gestão de Produção Industrial</option>
+            <option value="seeAll">GRH - Gestão de Recursos Humanos</option>
+            <option value="mult">DSM - Desenvolvimento de Software Multiplataforma</option>
+        </select>
+        <h4>5. Qual sua cidade de residência?</h4>
+        <h4>6. Qual o seu gênero?</h4>
+        <h4>7. Qual a sua data de nascimento?</h4>
+        <h4>8. Qual é o seu estado civil?</h4>
+        <h4>9. Você é portador de alguma necessidade especial?(Pode selecionar mais de uma, se for o caso)</h4>
+        <h4>10. Você convive ou mora com alguma pessoa com deficiência?</h4>
+        <h4>11. Quantos filhos você tem?</h4>
+        <h4>12. Com quem você mora atualmente?</h4>
+        <h4>13. Quantas pessoas, incluindo você, moram no seu domicílio?</h4>
+        <h4>14. Qual a situação do domicílio onde mora?</h4>
+        <h4>15. Tempo de moradia neste domicílio (Em anos)</h4>
+        <h4>16. Qual a faixa de renda mensal da sua família (em Salários Mínimos)</h4>
+        <h4>17.1. Quantas geladeiras há em seu domicílio.</h4>
+        <h4>17.2. Quantos celulares comuns há em seu domicílio?</h4>
+        <h4>17.3. Quantos micro-ondas há em seu domicílio?</h4>
+        <h4>17.4. Quantos notebooks há em seu domicílio?</h4>
+        <h4>17.5. Quantas máquinas de lavar roupa e(ou) tanquinho há em seu domicílio?</h4>
+        <h4>17.6. Quantas motocicletas há em seu domicílio?</h4>
+        <h4>17.7. Quantos automóveis há em seu domicílio?</h4>
+        <h4>17.8. Quantos vídeos cassete e(ou) DVD players há em seu domicílio?</h4>
+        <h4>17.9. Quantos televisores há em seu domicílio?</h4>
+        <h4>17.10. Quantos smartphones há em seu domicílio?</h4>
+        <h4>18. No seu domicílio tem?</h4>
+        <h4>19.1. Você trabalha?</h4>
+        <h4>19.2. Qual o seu vínculo com o emprego?</h4>
+        <h4>19.3. Qual a área do seu trabalho?</h4>
+        <h4>19.4. Qual seu horário de trabalho?</h4>
+        <h4>19.5. Qual a empresa que você está contratado agora?</h4>
+        <h4>20. Você tem plano de saúde privado?</h4>
+        <h4>21.1. Qual o grau de escolaridade do seu pai?</h4>
+        <h4>22. Na sua vida escolar você estudou</h4>
+        <h4>23.1. Com que frequência você utiliza microcomputadores?</h4>
+        <h4>23.2. Onde você utiliza microcomputadores?</h4>
+        <h4>23.3. Com qual finalidade você utiliza microcomputadores?</h4>
+        <h4>24. Como você classifica seu conhecimento em informática</h4>
+        <h4>25. Qual o seu conhecimento em relação aos aplicativos a seguir? [Windows]</h4>
+        <h4>25. Qual o seu conhecimento em relação aos aplicativos a seguir? [Linux]</h4>
+        <h4>25. Qual o seu conhecimento em relação aos aplicativos a seguir? [Editores de textos (Word, Writer, etc.)]</h4>
+        <h4>25. Qual o seu conhecimento em relação aos aplicativos a seguir? [Planilhas eletrônicas (Excel, Calc, etc.)]</h4>
+        <h4>25. Qual o seu conhecimento em relação aos aplicativos a seguir? [Apresentadores (Powerpoint, Impress, Prezzi, etc.)]</h4>
+        <h4>25. Qual o seu conhecimento em relação aos aplicativos a seguir? [Sistemas de Gestão Empresaria]</h4>
+        <h4>26. Agora, considere seu conhecimento sobre idiomas [Inglês]</h4>
+        <h4>26. Agora, considere seu conhecimento sobre idiomas [Espanhol]</h4>
+        <h4>26. Agora, considere seu conhecimento sobre idiomas [Outro Idioma]</h4>
+        <h4>27. Considere a busca por informação nos seguintes meios de comunicação [Televisores]</h4>
+        <h4>27. Considere a busca por informação nos seguintes meios de comunicação [Internet]</h4>
+        <h4>27. Considere a busca por informação nos seguintes meios de comunicação [Revistas]</h4>
+        <h4>27. Considere a busca por informação nos seguintes meios de comunicação [Jornais]</h4>
+        <h4>27. Considere a busca por informação nos seguintes meios de comunicação [Rádio]</h4>
+        <h4>27. Considere a busca por informação nos seguintes meios de comunicação [Conversas com Amigos]</h4>
+        <h4>28. Se você lê jornal, qual a frequência?</h4>
+        <h4>29. Se você lê jornal, quais os assuntos que mais lê?</h4>
+        <h4>30. Não considerando os livros escolares, quantos livros você lê por ano (em média)?</h4>
+        <h4>31. Se você lê livros literários, qual/quais o(s) gênero(s) preferido(s)?</h4>
+        <h4>32. Você dedica parte do seu tempo para atividades voluntárias?</h4>
+        <h4>33. Qual religião você professa?</h4>
+        <h4>34. Quais fontes de entretenimento cultural você usa?</h4>
+        <h4>35. Estamos quase acabando... Como conheceu a FATEC Franca?</h4>
+        <h4>36. Porque você escolheu este curso?</h4>
+        <h4>37. Qual sua maior expectativa quanto ao curso?</h4>
+        <h4>38. Qual sua expectativa após se formar?</h4>
+        <h4>39. Você já estudou nesta escola?</h4>
+        <h4>40. Você fez algum curso técnico?</h4>
+        <h4>41. Qual o meio de transporte você usa para vir à escola?</h4>
+        <h4>42. Escreva algumas linhas sobre sua história e seus sonhos de vida.</h4>

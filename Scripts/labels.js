@@ -212,7 +212,13 @@
             break;
           case 'percentage':
           default:
-            label = this.getPercentage(dataset, element, index) + '%';
+
+            label = this.getPercentage(dataset, element, index)
+            if(label < 4){
+              label = "";
+            }else{
+              label+="%"
+            }
             break;
         }
       }

@@ -1,4 +1,9 @@
 //variaveis criadas da seguinte forma q = questão n= número da questão, exemplo : q6 = questão 6
+
+let questoes = []
+
+
+
 let q6 ={//genero
     f:0,
     m:0,
