@@ -15,7 +15,7 @@ router.post('/cadastro',(req,res,next)=>{
                     if (errBcrypt){return res.status(500).send({error: errBcrypt})}
                     conn.query(
                         `INSERT INTO USERS (userName, password, realName) VALUES (?,?,?)`,
-                        [req.body.user, hash, req.body.name],
+                        [req.body.user, req.body.senha,, req.body.name],
                         (error,results)=>{
                             conn.release();
                             if (error){return res.status(500).send({error: error})}
@@ -35,7 +35,28 @@ router.post('/cadastro',(req,res,next)=>{
 })
 
 
-
+router.post('/login', (req, res, next) => {
+    mysql.getConnection((error, conn)=>{
+        if (error){return res.status(500).send({error: error})}
+        const query = `SELECT * FROM USERS WHERE userName = ?`;
+        conn.query(query, [req.body.user], (error, results, fields)=>{
+            conn.release();
+            if (error){return res.status(500).send({error: error}) };
+            if (results.length < 1){
+                return res.status(401).send({mensagem: 'Falha na autenticaçãoa'})
+            };
+            console.log(results[0])
+            bcrypt.hash(req.body.senha, 10, (errBcrypt, hash)=>{
+                if (errBcrypt){return res.status(500).send({error: errBcrypt})}
+                if (req.body.senha === results[0].password){
+                    res.status(201).send({messagem: 'Usuario autenticado'})
+                }else{
+                    return res.status(401).send({mensagem: 'Falha na autenticaçãob'})    
+                }
+        });
+        });
+    });
+});
 
 
 

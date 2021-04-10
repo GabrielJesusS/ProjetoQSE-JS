@@ -2,6 +2,8 @@ const express = require('express');
 
 const app = express();
 
+const cors = require('cors')
+
 const morgan = require('morgan');
 
 const bodyParser = require('body-parser')
@@ -10,7 +12,7 @@ const rotaFormulario = require('./routes/formulario')
 const rotaLogin = require('./routes/users')
 
 app.use(morgan('dev'));//Monitora as reqs e retorna um log
-
+app.use(cors())
 app.use(bodyParser.urlencoded({extended:false}));//Apenas dados simples
 app.use(bodyParser.json());// Apenas formato jsonpara entrada
 
