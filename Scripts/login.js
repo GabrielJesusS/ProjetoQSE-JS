@@ -75,20 +75,24 @@ function fazGet(url, body){
 }
 
 function logar(){
-    event.preventDefault()
-    let url = "http://perfilsocioeconomico-com.umbler.net/users/login"
-    let user = document.getElementById('user').value
-    let pass = document.getElementById('senha').value
-    console.log(user)
-    console.log(pass)
+    if (false){
+        event.preventDefault()
+        let url = "http://perfilsocioeconomico-com.umbler.net/users/login"
+        let user = document.getElementById('user').value
+        let pass = document.getElementById('senha').value
+        console.log(user)
+        console.log(pass)
 
-    let body = JSON.stringify({
-        "user": user,
-        "senha": pass
-    });
+        let body = JSON.stringify({
+            "user": user,
+            "senha": pass
+        });
 
-    fazGet(url, body)
-    console.log(fazGet.return)
+        fazGet(url, body)
+        console.log(fazGet.return)
+    } else {
+        window.location.href = "https://google.com"
+    }
 }
 
 
